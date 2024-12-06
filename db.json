@@ -1,0 +1,2283 @@
+{
+  "advisors": [
+    {
+      "name": "Mubeen Javid",
+      "email": "mubeenjavid12@teacher.cuisahiwal.edu.pk",
+      "password": "adv123",
+      "assignedClass": null,
+      "id": "Advisoree7f2e12-08f3-479f-92de-650f8f53a8e3"
+    },
+    {
+      "name": "Madeeha Fatima",
+      "email": "madeehafatima12@teacher.cuisahiwal.edu.pk",
+      "password": "adv123",
+      "assignedClass": "Class2ab95316-b024-493c-84de-676296bfa758",
+      "id": "Advisor6387e614-4a2d-4471-953c-8afe1ce7ff4a"
+    }
+  ],
+  "students": [
+    {
+      "regNo": "sp21-bse-001",
+      "name": "haseeb",
+      "email": "sp21-bse-001@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentfd9eaa70-616e-49a2-a016-51902cafb9f3",
+      "resultId": "b3598458-086a-47be-86ed-501aa6434999"
+    },
+    {
+      "regNo": "sp21-bse-002",
+      "name": "afifa",
+      "email": "sp21-bse-002@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student7718eabf-88c0-4c3a-8c4a-c1af8fa4447b",
+      "resultId": "6e2807e6-052e-4bb9-a872-eca34040eb5b"
+    },
+    {
+      "regNo": "sp21-bse-003",
+      "name": "anamta",
+      "email": "sp21-bse-003@students.cuisahiwal.edu.pk",
+      "password": "std123k",
+      "id": "Student501a454e-52c9-4852-926a-ec440b949f07",
+      "resultId": "20ed93d7-b7d6-49f8-9b3f-a073a7376243"
+    },
+    {
+      "regNo": "sp21-bse-004",
+      "name": "bilal",
+      "email": "sp21-bse-004@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentcf07ff37-8c8f-4923-a791-f3a5068dc66c",
+      "resultId": "9e1b5580-75a8-45ff-ba45-11fe6510f677"
+    },
+    {
+      "regNo": "sp21-bse-006",
+      "name": "faisal",
+      "email": "sp21-bse-006@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student8ea83608-e44e-4b1e-82e1-ae97dcf1c262",
+      "resultId": "75d552fa-a153-4e81-98f5-0545e030a51c"
+    }
+  ],
+  "admins": [
+    {
+      "id": "admin",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin"
+    }
+  ],
+  "courses": [
+    {
+      "id": "CSC101",
+      "course_code": "CSC101",
+      "course_title": "Introduction to ICT",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC102",
+      "course_code": "CSC102",
+      "course_title": "Discrete Structures",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC103",
+      "course_code": "CSC103",
+      "course_title": "Programming Fundamentals",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC211",
+      "course_code": "CSC211",
+      "course_title": "Data Structures and Algorithms",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [
+        "CSC103"
+      ],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC241",
+      "course_code": "CSC241",
+      "course_title": "Object Oriented Programming",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [
+        "CSC103"
+      ],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC322",
+      "course_code": "CSC322",
+      "course_title": "Operating Systems",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC211"
+      ],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC339",
+      "course_code": "CSC339",
+      "course_title": "Data Communications and Computer Networks",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC356",
+      "course_code": "CSC356",
+      "course_title": "Human Computer Interaction",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC371",
+      "course_code": "CSC371",
+      "course_title": "Database Systems I",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC432",
+      "course_code": "CSC432",
+      "course_title": "Information Security",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE291",
+      "course_code": "CSE291",
+      "course_title": "Introduction to Software Engineering",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE498",
+      "course_code": "CSE498",
+      "course_title": "Senior Design Project I",
+      "credit_hours": "2(0,2)",
+      "pre_requisites": [
+        "CSC241",
+        "CSC371",
+        "CSE291",
+        "HUM102"
+      ],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE499",
+      "course_code": "CSE499",
+      "course_title": "Senior Design Project II",
+      "credit_hours": "4(0,4)",
+      "pre_requisites": [
+        "CSE498"
+      ],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "EEE241",
+      "course_code": "EEE241",
+      "course_title": "Digital Logic Design",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC110",
+      "course_code": "CSC110",
+      "course_title": "Professional Practices for IT",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing General Education Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM100",
+      "course_code": "HUM100",
+      "course_title": "English Comprehension and Composition",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing General Education Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM102",
+      "course_code": "HUM102",
+      "course_title": "Report Writing Skills",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "HUM100"
+      ],
+      "courseType": "Computing General Education Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM103",
+      "course_code": "HUM103",
+      "course_title": "Communication Skills",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "HUM100"
+      ],
+      "courseType": "Computing General Education Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM110",
+      "course_code": "HUM110",
+      "course_title": "Islamic Studies",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing General Education Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM111",
+      "course_code": "HUM111",
+      "course_title": "Pakistan Studies",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing General Education Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM114",
+      "course_code": "HUM114",
+      "course_title": "Ethics",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing General Education Courses",
+      "isOffered": false
+    },
+    {
+      "id": "EEE121",
+      "course_code": "EEE121",
+      "course_title": "Electric Circuits Analysis I",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Computing Supporting Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH104",
+      "course_code": "MTH104",
+      "course_title": "Calculus and Analytic Geometry",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing Supporting Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH231",
+      "course_code": "MTH231",
+      "course_title": "Linear Algebra",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing Supporting Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH262",
+      "course_code": "MTH262",
+      "course_title": "Statistics and Probability Theory",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Computing Supporting Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC321",
+      "course_code": "CSC321",
+      "course_title": "Microprocessor and Assembly Language",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "EEE241"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC331",
+      "course_code": "CSC331",
+      "course_title": "Digital Image Processing",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "MTH231"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC334",
+      "course_code": "CSC334",
+      "course_title": "Parallel and Distributed Computing",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC103"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC347",
+      "course_code": "CSC347",
+      "course_title": "Computational Intelligence",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC402",
+      "course_code": "CSC402",
+      "course_title": "Database Systems II",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSC371"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC412",
+      "course_code": "CSC412",
+      "course_title": "Visual Programming",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC417",
+      "course_code": "CSC417",
+      "course_title": "E-Commerce and Digital Marketing",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC418",
+      "course_code": "CSC418",
+      "course_title": "DevOps for Cloud Computing",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC430",
+      "course_code": "CSC430",
+      "course_title": "Wireless Networks",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC339"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC443",
+      "course_code": "CSC443",
+      "course_title": "Scripting Languages",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC451",
+      "course_code": "CSC451",
+      "course_title": "Introduction to Modeling and Simulation",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC211"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC454",
+      "course_code": "CSC454",
+      "course_title": "Pattern Recognition",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSC354"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC455",
+      "course_code": "CSC455",
+      "course_title": "Computer Vision",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "MTH231"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC461",
+      "course_code": "CSC461",
+      "course_title": "Introduction to Data Science",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "MTH262"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC462",
+      "course_code": "CSC462",
+      "course_title": "Artificial Intelligence",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC1"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC471",
+      "course_code": "CSC471",
+      "course_title": "Distributed Database Systems",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSC371"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC482",
+      "course_code": "CSC482",
+      "course_title": "Systems and Networks Administration",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC339"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC495",
+      "course_code": "CSC495",
+      "course_title": "Game Development",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE300",
+      "course_code": "CSE300",
+      "course_title": "Software Metrics",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE325",
+      "course_code": "CSE325",
+      "course_title": "Software Construction and Development",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE327",
+      "course_code": "CSE327",
+      "course_title": "Software Re-Engineering",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE330",
+      "course_code": "CSE330",
+      "course_title": "E-Commerce",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE331",
+      "course_code": "CSE331",
+      "course_title": "Software Engineering Economics",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE332",
+      "course_code": "CSE332",
+      "course_title": "Information System Audit",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE333",
+      "course_code": "CSE333",
+      "course_title": "Software Process Improvement",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE334",
+      "course_code": "CSE334",
+      "course_title": "Reverse Engineering of Source Code",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE350",
+      "course_code": "CSE350",
+      "course_title": "Topics in Software Engineering I",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE354",
+      "course_code": "CSE354",
+      "course_title": "Design Patterns",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE356",
+      "course_code": "CSE356",
+      "course_title": "Formal Methods",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSE483",
+      "course_code": "CSE483",
+      "course_title": "Topics in Software Engineering II",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "CS and SE Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "MTH100",
+      "course_code": "MTH100",
+      "course_title": "Mathematics I",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH101",
+      "course_code": "MTH101",
+      "course_title": "Calculus I",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC433",
+      "course_code": "CSC433",
+      "course_title": "Cryptography and Network Security",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSC339"
+      ],
+      "courseType": "Enterprise Security Architecture",
+      "isOffered": true
+    },
+    {
+      "id": "CSC354",
+      "course_code": "CSC354",
+      "course_title": "Machine Learning",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Information Systems and Data Processing",
+      "isOffered": true
+    },
+    {
+      "id": "CSC496",
+      "course_code": "CSC496",
+      "course_title": "Data Warehousing and Data Mining",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC371"
+      ],
+      "courseType": "Information Systems and Data Processing",
+      "isOffered": false
+    },
+    {
+      "id": "HUM220",
+      "course_code": "HUM220",
+      "course_title": "Introduction to Psychology",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM221",
+      "course_code": "HUM221",
+      "course_title": "International Relations",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "HUM320",
+      "course_code": "HUM320",
+      "course_title": "Introduction to Sociology",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "HUM430",
+      "course_code": "HUM430",
+      "course_title": "French",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "HUM431",
+      "course_code": "HUM431",
+      "course_title": "German",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "HUM432",
+      "course_code": "HUM432",
+      "course_title": "Arabic",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "HUM433",
+      "course_code": "HUM433",
+      "course_title": "Persian",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "HUM434",
+      "course_code": "HUM434",
+      "course_title": "Chinese",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "HUM435",
+      "course_code": "HUM435",
+      "course_title": "Japanese",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "MGT100",
+      "course_code": "MGT100",
+      "course_title": "Introduction to Business",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MGT101",
+      "course_code": "MGT101",
+      "course_title": "Introduction to Management",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MGT131",
+      "course_code": "MGT131",
+      "course_title": "Financial Accounting",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "MGT210",
+      "course_code": "MGT210",
+      "course_title": "Fundamentals of Marketing",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "MGT350",
+      "course_code": "MGT350",
+      "course_title": "Human Resource Management",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MGT403",
+      "course_code": "MGT403",
+      "course_title": "Entrepreneurship",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MGT522",
+      "course_code": "MGT522",
+      "course_title": "Marketing of IT and Telecom Products",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Institutional Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC360",
+      "course_code": "CSC360",
+      "course_title": "Software Safety Critical Systems",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Safety Critical Systems",
+      "isOffered": false
+    },
+    {
+      "id": "CSC361",
+      "course_code": "CSC361",
+      "course_title": "Software Fault Tolerance",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Safety Critical Systems",
+      "isOffered": false
+    },
+    {
+      "id": "CSC353",
+      "course_code": "CSC353",
+      "course_title": "Computer Graphics",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "MTH231"
+      ],
+      "courseType": "Scientific Systems",
+      "isOffered": false
+    },
+    {
+      "id": "CSC448",
+      "course_code": "CSC448",
+      "course_title": "Data Visualization",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Scientific Systems",
+      "isOffered": false
+    },
+    {
+      "id": "CSE302",
+      "course_code": "CSE302",
+      "course_title": "Software Quality Engineering",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "Software Engineering Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE303",
+      "course_code": "CSE303",
+      "course_title": "Software Design and Architecture",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "Software Engineering Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE304",
+      "course_code": "CSE304",
+      "course_title": "Object Oriented Software Engineering",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "Software Engineering Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE305",
+      "course_code": "CSE305",
+      "course_title": "Software Requirement Engineering",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "Software Engineering Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE455",
+      "course_code": "CSE455",
+      "course_title": "Software Testing",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSE302"
+      ],
+      "courseType": "Software Engineering Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSE494",
+      "course_code": "CSE494",
+      "course_title": "Software Project Management",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSE291"
+      ],
+      "courseType": "Software Engineering Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "BIO100",
+      "course_code": "BIO100",
+      "course_title": "Fundamentals of Biology",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "BIO135",
+      "course_code": "BIO135",
+      "course_title": "General Chemistry",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "BIO231",
+      "course_code": "BIO231",
+      "course_title": "Fundamentals of Genetics",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "BIO233",
+      "course_code": "BIO233",
+      "course_title": "Development Biology",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "BIO310",
+      "course_code": "BIO310",
+      "course_title": "Introduction to Bioinformatics",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "BSC101",
+      "course_code": "BSC101",
+      "course_title": "Zoology I",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "BSC102",
+      "course_code": "BSC102",
+      "course_title": "Plant Sciences I",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "BSC206",
+      "course_code": "BSC206",
+      "course_title": "Introduction to Microbiology",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "ENV230",
+      "course_code": "ENV230",
+      "course_title": "Environmental Monitoring",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "PHY100",
+      "course_code": "PHY100",
+      "course_title": "Mechanics and Thermodynamics",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "PHY120",
+      "course_code": "PHY120",
+      "course_title": "Electricity, Magnetism and Optics",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "PHY229",
+      "course_code": "PHY229",
+      "course_title": "Modern Physics",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [
+        "PHY120"
+      ],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "SLS130",
+      "course_code": "SLS130",
+      "course_title": "Introductory Soil Science I",
+      "credit_hours": "4(3,1)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC475",
+      "course_code": "CSC475",
+      "course_title": "Numerical Computing",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "MTH104"
+      ],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH105",
+      "course_code": "MTH105",
+      "course_title": "Multivariable Calculus",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "MTH104"
+      ],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH112",
+      "course_code": "MTH112",
+      "course_title": "Set Theory and Logic",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "MTH232",
+      "course_code": "MTH232",
+      "course_title": "Abstract Algebra",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "MTH242",
+      "course_code": "MTH242",
+      "course_title": "Differential Equations",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [
+        "MTH104"
+      ],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": true
+    },
+    {
+      "id": "MTH251",
+      "course_code": "MTH251",
+      "course_title": "Set Topology",
+      "credit_hours": "3(3,0)",
+      "pre_requisites": [],
+      "courseType": "Supporting Science Elective Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC303",
+      "course_code": "CSC303",
+      "course_title": "Mobile Application Development",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "Web Technologies",
+      "isOffered": true
+    },
+    {
+      "id": "CSC336",
+      "course_code": "CSC336",
+      "course_title": "Web Technologies",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [
+        "CSC241"
+      ],
+      "courseType": "Web Technologies",
+      "isOffered": true
+    },
+    {
+      "id": "CSC337",
+      "course_code": "CSC337",
+      "course_title": "Advanced Web Technologies",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Web Technologies",
+      "isOffered": false
+    },
+    {
+      "id": "CSE344",
+      "course_code": "CSE344",
+      "course_title": "Semantic Web",
+      "credit_hours": "3(2,1)",
+      "pre_requisites": [],
+      "courseType": "Web Technologies",
+      "isOffered": false
+    }
+  ],
+  "classes": [
+    {
+      "id": "Class2ab95316-b024-493c-84de-676296bfa758",
+      "classname": "SP21-BSE-8A",
+      "students": [
+        "sp21-bse-001",
+        "sp21-bse-002",
+        "sp21-bse-003",
+        "sp21-bse-004",
+        "sp21-bse-006"
+      ],
+      "advisorId": "Advisor6387e614-4a2d-4471-953c-8afe1ce7ff4a",
+      "sosId": "sos007e7cd8-8b4f-4ae7-b310-d21eff3b163e",
+      "isFirstSemester": false
+    }
+  ],
+  "results": [
+    {
+      "regNo": "sp21-bse-001",
+      "resultId": "b3598458-086a-47be-86ed-501aa6434999",
+      "resultCard": [
+        {
+          "semester": "Spring 2021",
+          "gpa": 3.32,
+          "cgpa": 3.32,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 76
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 83
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2021",
+          "gpa": 3,
+          "cgpa": 3.1,
+          "courses": [
+            {
+              "courseCode": "CSC102",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC103",
+              "marks": 45
+            },
+            {
+              "courseCode": "CSC110",
+              "marks": 45
+            },
+            {
+              "courseCode": "HUM103",
+              "marks": 48
+            },
+            {
+              "courseCode": "HUM111",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH105",
+              "marks": 93
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2022",
+          "gpa": 2.6,
+          "cgpa": 2.8,
+          "courses": [
+            {
+              "courseCode": "CSC241",
+              "marks": 47
+            },
+            {
+              "courseCode": "CSC339",
+              "marks": 41
+            },
+            {
+              "courseCode": "CSE291",
+              "marks": 68
+            },
+            {
+              "courseCode": "EEE241",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM102",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH231",
+              "marks": 80
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2022",
+          "gpa": 3.41,
+          "cgpa": 3.33,
+          "courses": [
+            {
+              "courseCode": "CSC211",
+              "marks": 42
+            },
+            {
+              "courseCode": "CSC371",
+              "marks": 83
+            },
+            {
+              "courseCode": "CSC495",
+              "marks": 82
+            },
+            {
+              "courseCode": "CSE304",
+              "marks": 88
+            },
+            {
+              "courseCode": "MTH242",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2023",
+          "gpa": 2.1,
+          "cgpa": 2.6,
+          "courses": [
+            {
+              "courseCode": "CSC232",
+              "marks": 40
+            },
+            {
+              "courseCode": "CSC336",
+              "marks": 46
+            },
+            {
+              "courseCode": "CSC354",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSE302",
+              "marks": 90
+            },
+            {
+              "courseCode": "CSE305",
+              "marks": 91
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2023",
+          "gpa": 3.54,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC455",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSE303",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSE354",
+              "marks": 95
+            },
+            {
+              "courseCode": "MGT101",
+              "marks": 82
+            },
+            {
+              "courseCode": "MGT350",
+              "marks": 71
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2024",
+          "gpa": 1.78,
+          "cgpa": 1.98,
+          "courses": [
+            {
+              "courseCode": "CSC356",
+              "marks": 42
+            },
+            {
+              "courseCode": "CSC432",
+              "marks": 47
+            },
+            {
+              "courseCode": "CSE498",
+              "marks": 97
+            },
+            {
+              "courseCode": "MGT403",
+              "marks": 91
+            },
+            {
+              "courseCode": "MTH262",
+              "marks": 96
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "regNo": "sp21-bse-002",
+      "resultId": "6e2807e6-052e-4bb9-a872-eca34040eb5b",
+      "resultCard": [
+        {
+          "semester": "Spring 2021",
+          "gpa": 3.32,
+          "cgpa": 3.32,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 42
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 40
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 83
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2021",
+          "gpa": 3.48,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC102",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC103",
+              "marks": 85
+            },
+            {
+              "courseCode": "CSC110",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM103",
+              "marks": 78
+            },
+            {
+              "courseCode": "HUM111",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH105",
+              "marks": 93
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2022",
+          "gpa": 3.38,
+          "cgpa": 3.31,
+          "courses": [
+            {
+              "courseCode": "CSC241",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSC339",
+              "marks": 71
+            },
+            {
+              "courseCode": "CSE291",
+              "marks": 68
+            },
+            {
+              "courseCode": "EEE241",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM102",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH231",
+              "marks": 80
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2022",
+          "gpa": 3.41,
+          "cgpa": 3.33,
+          "courses": [
+            {
+              "courseCode": "CSC211",
+              "marks": 77
+            },
+            {
+              "courseCode": "CSC371",
+              "marks": 83
+            },
+            {
+              "courseCode": "CSC495",
+              "marks": 82
+            },
+            {
+              "courseCode": "CSE304",
+              "marks": 88
+            },
+            {
+              "courseCode": "MTH242",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2023",
+          "gpa": 3.51,
+          "cgpa": 3.39,
+          "courses": [
+            {
+              "courseCode": "CSC232",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC336",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSC354",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSE302",
+              "marks": 90
+            },
+            {
+              "courseCode": "CSE305",
+              "marks": 91
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2023",
+          "gpa": 3.54,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC455",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSE303",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSE354",
+              "marks": 95
+            },
+            {
+              "courseCode": "MGT101",
+              "marks": 82
+            },
+            {
+              "courseCode": "MGT350",
+              "marks": 71
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2024",
+          "gpa": 3.56,
+          "cgpa": 3.41,
+          "courses": [
+            {
+              "courseCode": "CSC356",
+              "marks": 72
+            },
+            {
+              "courseCode": "CSC432",
+              "marks": 70
+            },
+            {
+              "courseCode": "CSE498",
+              "marks": 97
+            },
+            {
+              "courseCode": "MGT403",
+              "marks": 91
+            },
+            {
+              "courseCode": "MTH262",
+              "marks": 96
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "regNo": "sp21-bse-003",
+      "resultId": "20ed93d7-b7d6-49f8-9b3f-a073a7376243",
+      "resultCard": [
+        {
+          "semester": "Spring 2021",
+          "gpa": 3.32,
+          "cgpa": 3.32,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 76
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 83
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2021",
+          "gpa": 3.48,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC102",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC103",
+              "marks": 85
+            },
+            {
+              "courseCode": "CSC110",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM103",
+              "marks": 78
+            },
+            {
+              "courseCode": "HUM111",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH105",
+              "marks": 93
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2022",
+          "gpa": 3.38,
+          "cgpa": 3.31,
+          "courses": [
+            {
+              "courseCode": "CSC241",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSC339",
+              "marks": 71
+            },
+            {
+              "courseCode": "CSE291",
+              "marks": 68
+            },
+            {
+              "courseCode": "EEE241",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM102",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH231",
+              "marks": 80
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2022",
+          "gpa": 3.41,
+          "cgpa": 3.33,
+          "courses": [
+            {
+              "courseCode": "CSC211",
+              "marks": 77
+            },
+            {
+              "courseCode": "CSC371",
+              "marks": 83
+            },
+            {
+              "courseCode": "CSC495",
+              "marks": 82
+            },
+            {
+              "courseCode": "CSE304",
+              "marks": 88
+            },
+            {
+              "courseCode": "MTH242",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2023",
+          "gpa": 3.51,
+          "cgpa": 3.39,
+          "courses": [
+            {
+              "courseCode": "CSC232",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC336",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSC354",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSE302",
+              "marks": 90
+            },
+            {
+              "courseCode": "CSE305",
+              "marks": 91
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2023",
+          "gpa": 3.54,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC455",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSE303",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSE354",
+              "marks": 95
+            },
+            {
+              "courseCode": "MGT101",
+              "marks": 82
+            },
+            {
+              "courseCode": "MGT350",
+              "marks": 71
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2024",
+          "gpa": 3.56,
+          "cgpa": 3.41,
+          "courses": [
+            {
+              "courseCode": "CSC356",
+              "marks": 72
+            },
+            {
+              "courseCode": "CSC432",
+              "marks": 70
+            },
+            {
+              "courseCode": "CSE498",
+              "marks": 97
+            },
+            {
+              "courseCode": "MGT403",
+              "marks": 91
+            },
+            {
+              "courseCode": "MTH262",
+              "marks": 96
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "regNo": "sp21-bse-004",
+      "resultId": "9e1b5580-75a8-45ff-ba45-11fe6510f677",
+      "resultCard": [
+        {
+          "semester": "Spring 2021",
+          "gpa": 3.32,
+          "cgpa": 3.32,
+          "courses": [
+            {
+              "courseCode": "EEE121",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 83
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2021",
+          "gpa": 3.48,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC102",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC103",
+              "marks": 85
+            },
+            {
+              "courseCode": "CSC110",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM103",
+              "marks": 78
+            },
+            {
+              "courseCode": "HUM111",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH105",
+              "marks": 93
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2022",
+          "gpa": 3.38,
+          "cgpa": 3.31,
+          "courses": [
+            {
+              "courseCode": "CSC241",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSC339",
+              "marks": 71
+            },
+            {
+              "courseCode": "CSE291",
+              "marks": 68
+            },
+            {
+              "courseCode": "EEE241",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM102",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH231",
+              "marks": 80
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2022",
+          "gpa": 3.41,
+          "cgpa": 3.33,
+          "courses": [
+            {
+              "courseCode": "CSC211",
+              "marks": 77
+            },
+            {
+              "courseCode": "CSC371",
+              "marks": 83
+            },
+            {
+              "courseCode": "CSC495",
+              "marks": 82
+            },
+            {
+              "courseCode": "CSE304",
+              "marks": 88
+            },
+            {
+              "courseCode": "MTH242",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2023",
+          "gpa": 3.51,
+          "cgpa": 3.39,
+          "courses": [
+            {
+              "courseCode": "CSC232",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC336",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSC354",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSE302",
+              "marks": 90
+            },
+            {
+              "courseCode": "CSE305",
+              "marks": 91
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2023",
+          "gpa": 3.54,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC455",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSE303",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSE354",
+              "marks": 95
+            },
+            {
+              "courseCode": "MGT101",
+              "marks": 82
+            },
+            {
+              "courseCode": "MGT350",
+              "marks": 71
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2024",
+          "gpa": 3.56,
+          "cgpa": 3.41,
+          "courses": [
+            {
+              "courseCode": "CSC356",
+              "marks": 72
+            },
+            {
+              "courseCode": "CSC432",
+              "marks": 70
+            },
+            {
+              "courseCode": "CSE498",
+              "marks": 97
+            },
+            {
+              "courseCode": "MGT403",
+              "marks": 91
+            },
+            {
+              "courseCode": "MTH262",
+              "marks": 96
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "regNo": "sp21-bse-006",
+      "resultId": "75d552fa-a153-4e81-98f5-0545e030a51c",
+      "resultCard": [
+        {
+          "semester": "Spring 2021",
+          "gpa": 3.32,
+          "cgpa": 3.32,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 76
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 83
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2021",
+          "gpa": 3.48,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC102",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC103",
+              "marks": 85
+            },
+            {
+              "courseCode": "CSC110",
+              "marks": 75
+            },
+            {
+              "courseCode": "HUM103",
+              "marks": 78
+            },
+            {
+              "courseCode": "HUM111",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH105",
+              "marks": 93
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2022",
+          "gpa": 3.38,
+          "cgpa": 3.31,
+          "courses": [
+            {
+              "courseCode": "CSC241",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSC339",
+              "marks": 71
+            },
+            {
+              "courseCode": "CSE291",
+              "marks": 68
+            },
+            {
+              "courseCode": "EEE241",
+              "marks": 80
+            },
+            {
+              "courseCode": "HUM102",
+              "marks": 85
+            },
+            {
+              "courseCode": "MTH231",
+              "marks": 80
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2022",
+          "gpa": 3.41,
+          "cgpa": 3.33,
+          "courses": [
+            {
+              "courseCode": "CSC211",
+              "marks": 77
+            },
+            {
+              "courseCode": "CSC371",
+              "marks": 83
+            },
+            {
+              "courseCode": "CSC495",
+              "marks": 82
+            },
+            {
+              "courseCode": "CSE304",
+              "marks": 88
+            },
+            {
+              "courseCode": "MTH242",
+              "marks": 90
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2023",
+          "gpa": 3.51,
+          "cgpa": 3.39,
+          "courses": [
+            {
+              "courseCode": "CSC232",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSC336",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSC354",
+              "marks": 80
+            },
+            {
+              "courseCode": "CSE302",
+              "marks": 90
+            },
+            {
+              "courseCode": "CSE305",
+              "marks": 91
+            }
+          ]
+        },
+        {
+          "semester": "Fall 2023",
+          "gpa": 3.54,
+          "cgpa": 3.4,
+          "courses": [
+            {
+              "courseCode": "CSC455",
+              "marks": 87
+            },
+            {
+              "courseCode": "CSE303",
+              "marks": 86
+            },
+            {
+              "courseCode": "CSE354",
+              "marks": 95
+            },
+            {
+              "courseCode": "MGT101",
+              "marks": 82
+            },
+            {
+              "courseCode": "MGT350",
+              "marks": 71
+            }
+          ]
+        },
+        {
+          "semester": "Spring 2024",
+          "gpa": 3.56,
+          "cgpa": 3.41,
+          "courses": [
+            {
+              "courseCode": "CSC356",
+              "marks": 72
+            },
+            {
+              "courseCode": "CSC432",
+              "marks": 70
+            },
+            {
+              "courseCode": "CSE498",
+              "marks": 97
+            },
+            {
+              "courseCode": "MGT403",
+              "marks": 91
+            },
+            {
+              "courseCode": "MTH262",
+              "marks": 96
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "schemeOfStudy": [
+    {
+      "id": "sos007e7cd8-8b4f-4ae7-b310-d21eff3b163e",
+      "name": "computer science",
+      "courses": [
+        "CSC101",
+        "CSC102",
+        "CSC103",
+        "CSC211",
+        "CSC241",
+        "CSC322",
+        "CSC339",
+        "CSC356",
+        "CSC371",
+        "CSC432",
+        "CSE291",
+        "CSE498",
+        "CSE499",
+        "EEE241",
+        "CSC110",
+        "HUM100",
+        "HUM102",
+        "HUM103",
+        "HUM110",
+        "HUM111",
+        "HUM114",
+        "EEE121",
+        "MTH104",
+        "MTH231",
+        "MTH262",
+        "CSC321",
+        "CSC331",
+        "CSC334",
+        "CSC347",
+        "CSC402",
+        "CSC412",
+        "CSC417",
+        "CSC418",
+        "CSC430",
+        "CSC432",
+        "CSC443",
+        "CSC451",
+        "CSC454",
+        "CSC455",
+        "CSC461",
+        "CSC462",
+        "CSC471",
+        "CSC482",
+        "CSC495",
+        "CSE300",
+        "CSE325",
+        "CSE327",
+        "CSE330",
+        "CSE331",
+        "CSE332",
+        "CSE333",
+        "CSE334",
+        "CSE350",
+        "CSE354",
+        "CSE356",
+        "CSE483",
+        "MTH100",
+        "MTH101",
+        "CSC433",
+        "CSC354",
+        "CSC496",
+        "HUM220",
+        "HUM221",
+        "HUM320",
+        "HUM430",
+        "HUM431",
+        "HUM432",
+        "HUM433",
+        "HUM434",
+        "HUM435",
+        "MGT100",
+        "MGT101",
+        "MGT131",
+        "MGT210",
+        "MGT350",
+        "MGT403",
+        "MGT522",
+        "CSC360",
+        "CSC361",
+        "CSC353",
+        "CSC448",
+        "CSE302",
+        "CSE303",
+        "CSE304",
+        "CSE305",
+        "CSE455",
+        "CSE494",
+        "BIO100",
+        "BIO135",
+        "BIO231",
+        "BIO233",
+        "BIO310",
+        "BSC101",
+        "BSC102",
+        "BSC206",
+        "ENV230",
+        "PHY100",
+        "PHY120",
+        "PHY229",
+        "SLS130",
+        "CSC475",
+        "MTH105",
+        "MTH112",
+        "MTH232",
+        "MTH242",
+        "MTH251",
+        "CSC303",
+        "CSC336",
+        "CSC337",
+        "CSE344"
+      ]
+    }
+  ]
+}

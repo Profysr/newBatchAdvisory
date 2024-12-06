@@ -1,0 +1,35 @@
+{
+  "classname": "SP21-BSE-8A",
+  "students": [
+    {
+      "regNo": "sp21-bse-001",
+      "name": "haseeb",
+      "email": "sp21-bse-001@students.cuisahiwal.edu.pk",
+      "password": "std123"
+    },
+    {
+      "regNo": "sp21-bse-002",
+      "name": "afifa",
+      "email": "sp21-bse-002@students.cuisahiwal.edu.pk",
+      "password": "std123"
+    },
+    {
+      "regNo": "sp21-bse-003",
+      "name": "anamta",
+      "email": "sp21-bse-003@students.cuisahiwal.edu.pk",
+      "password": "std123k"
+    },
+    {
+      "regNo": "sp21-bse-004",
+      "name": "bilal",
+      "email": "sp21-bse-004@students.cuisahiwal.edu.pk",
+      "password": "std123"
+    },
+    {
+      "regNo": "sp21-bse-006",
+      "name": "faisal",
+      "email": "sp21-bse-006@students.cuisahiwal.edu.pk",
+      "password": "std123"
+    }
+  ]
+}

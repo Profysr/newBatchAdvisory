@@ -1,0 +1,1008 @@
+[
+  {
+    "regNo": "sp21-bse-001",
+    "resultCard": [
+      {
+        "semester": "Spring 2021",
+        "gpa": 3.32,
+        "cgpa": 3.32,
+        "courses": [
+          {
+            "courseCode": "CSC101",
+            "marks": 76
+          },
+          {
+            "courseCode": "EEE121",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM100",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM110",
+            "marks": 83
+          },
+          {
+            "courseCode": "MTH104",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2021",
+        "gpa": 3.48,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC102",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC103",
+            "marks": 85
+          },
+          {
+            "courseCode": "CSC110",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM103",
+            "marks": 78
+          },
+          {
+            "courseCode": "HUM111",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH105",
+            "marks": 93
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2022",
+        "gpa": 3.38,
+        "cgpa": 3.31,
+        "courses": [
+          {
+            "courseCode": "CSC241",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSC339",
+            "marks": 71
+          },
+          {
+            "courseCode": "CSE291",
+            "marks": 68
+          },
+          {
+            "courseCode": "EEE241",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM102",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH231",
+            "marks": 80
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2022",
+        "gpa": 3.41,
+        "cgpa": 3.33,
+        "courses": [
+          {
+            "courseCode": "CSC211",
+            "marks": 77
+          },
+          {
+            "courseCode": "CSC371",
+            "marks": 83
+          },
+          {
+            "courseCode": "CSC495",
+            "marks": 82
+          },
+          {
+            "courseCode": "CSE304",
+            "marks": 88
+          },
+          {
+            "courseCode": "MTH242",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2023",
+        "gpa": 3.51,
+        "cgpa": 3.39,
+        "courses": [
+          {
+            "courseCode": "CSC232",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC336",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSC354",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSE302",
+            "marks": 90
+          },
+          {
+            "courseCode": "CSE305",
+            "marks": 91
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2023",
+        "gpa": 3.54,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC455",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSE303",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSE354",
+            "marks": 95
+          },
+          {
+            "courseCode": "MGT101",
+            "marks": 82
+          },
+          {
+            "courseCode": "MGT350",
+            "marks": 71
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2024",
+        "gpa": 3.56,
+        "cgpa": 3.41,
+        "courses": [
+          {
+            "courseCode": "CSC356",
+            "marks": 72
+          },
+          {
+            "courseCode": "CSC432",
+            "marks": 70
+          },
+          {
+            "courseCode": "CSE498",
+            "marks": 97
+          },
+          {
+            "courseCode": "MGT403",
+            "marks": 91
+          },
+          {
+            "courseCode": "MTH262",
+            "marks": 96
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "regNo": "sp21-bse-002",
+    "resultCard": [
+      {
+        "semester": "Spring 2021",
+        "gpa": 3.32,
+        "cgpa": 3.32,
+        "courses": [
+          {
+            "courseCode": "CSC101",
+            "marks": 76
+          },
+          {
+            "courseCode": "EEE121",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM100",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM110",
+            "marks": 83
+          },
+          {
+            "courseCode": "MTH104",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2021",
+        "gpa": 3.48,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC102",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC103",
+            "marks": 85
+          },
+          {
+            "courseCode": "CSC110",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM103",
+            "marks": 78
+          },
+          {
+            "courseCode": "HUM111",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH105",
+            "marks": 93
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2022",
+        "gpa": 3.38,
+        "cgpa": 3.31,
+        "courses": [
+          {
+            "courseCode": "CSC241",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSC339",
+            "marks": 71
+          },
+          {
+            "courseCode": "CSE291",
+            "marks": 68
+          },
+          {
+            "courseCode": "EEE241",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM102",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH231",
+            "marks": 80
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2022",
+        "gpa": 3.41,
+        "cgpa": 3.33,
+        "courses": [
+          {
+            "courseCode": "CSC211",
+            "marks": 77
+          },
+          {
+            "courseCode": "CSC371",
+            "marks": 83
+          },
+          {
+            "courseCode": "CSC495",
+            "marks": 82
+          },
+          {
+            "courseCode": "CSE304",
+            "marks": 88
+          },
+          {
+            "courseCode": "MTH242",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2023",
+        "gpa": 3.51,
+        "cgpa": 3.39,
+        "courses": [
+          {
+            "courseCode": "CSC232",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC336",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSC354",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSE302",
+            "marks": 90
+          },
+          {
+            "courseCode": "CSE305",
+            "marks": 91
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2023",
+        "gpa": 3.54,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC455",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSE303",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSE354",
+            "marks": 95
+          },
+          {
+            "courseCode": "MGT101",
+            "marks": 82
+          },
+          {
+            "courseCode": "MGT350",
+            "marks": 71
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2024",
+        "gpa": 3.56,
+        "cgpa": 3.41,
+        "courses": [
+          {
+            "courseCode": "CSC356",
+            "marks": 72
+          },
+          {
+            "courseCode": "CSC432",
+            "marks": 70
+          },
+          {
+            "courseCode": "CSE498",
+            "marks": 97
+          },
+          {
+            "courseCode": "MGT403",
+            "marks": 91
+          },
+          {
+            "courseCode": "MTH262",
+            "marks": 96
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "regNo": "sp21-bse-003",
+    "resultCard": [
+      {
+        "semester": "Spring 2021",
+        "gpa": 3.32,
+        "cgpa": 3.32,
+        "courses": [
+          {
+            "courseCode": "CSC101",
+            "marks": 76
+          },
+          {
+            "courseCode": "EEE121",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM100",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM110",
+            "marks": 83
+          },
+          {
+            "courseCode": "MTH104",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2021",
+        "gpa": 3.48,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC102",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC103",
+            "marks": 85
+          },
+          {
+            "courseCode": "CSC110",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM103",
+            "marks": 78
+          },
+          {
+            "courseCode": "HUM111",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH105",
+            "marks": 93
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2022",
+        "gpa": 3.38,
+        "cgpa": 3.31,
+        "courses": [
+          {
+            "courseCode": "CSC241",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSC339",
+            "marks": 71
+          },
+          {
+            "courseCode": "CSE291",
+            "marks": 68
+          },
+          {
+            "courseCode": "EEE241",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM102",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH231",
+            "marks": 80
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2022",
+        "gpa": 3.41,
+        "cgpa": 3.33,
+        "courses": [
+          {
+            "courseCode": "CSC211",
+            "marks": 77
+          },
+          {
+            "courseCode": "CSC371",
+            "marks": 83
+          },
+          {
+            "courseCode": "CSC495",
+            "marks": 82
+          },
+          {
+            "courseCode": "CSE304",
+            "marks": 88
+          },
+          {
+            "courseCode": "MTH242",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2023",
+        "gpa": 3.51,
+        "cgpa": 3.39,
+        "courses": [
+          {
+            "courseCode": "CSC232",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC336",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSC354",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSE302",
+            "marks": 90
+          },
+          {
+            "courseCode": "CSE305",
+            "marks": 91
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2023",
+        "gpa": 3.54,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC455",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSE303",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSE354",
+            "marks": 95
+          },
+          {
+            "courseCode": "MGT101",
+            "marks": 82
+          },
+          {
+            "courseCode": "MGT350",
+            "marks": 71
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2024",
+        "gpa": 3.56,
+        "cgpa": 3.41,
+        "courses": [
+          {
+            "courseCode": "CSC356",
+            "marks": 72
+          },
+          {
+            "courseCode": "CSC432",
+            "marks": 70
+          },
+          {
+            "courseCode": "CSE498",
+            "marks": 97
+          },
+          {
+            "courseCode": "MGT403",
+            "marks": 91
+          },
+          {
+            "courseCode": "MTH262",
+            "marks": 96
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "regNo": "sp21-bse-004",
+    "resultCard": [
+      {
+        "semester": "Spring 2021",
+        "gpa": 3.32,
+        "cgpa": 3.32,
+        "courses": [
+          {
+            "courseCode": "EEE121",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM100",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM110",
+            "marks": 83
+          },
+          {
+            "courseCode": "MTH104",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2021",
+        "gpa": 3.48,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC102",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC103",
+            "marks": 85
+          },
+          {
+            "courseCode": "CSC110",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM103",
+            "marks": 78
+          },
+          {
+            "courseCode": "HUM111",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH105",
+            "marks": 93
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2022",
+        "gpa": 3.38,
+        "cgpa": 3.31,
+        "courses": [
+          {
+            "courseCode": "CSC241",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSC339",
+            "marks": 71
+          },
+          {
+            "courseCode": "CSE291",
+            "marks": 68
+          },
+          {
+            "courseCode": "EEE241",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM102",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH231",
+            "marks": 80
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2022",
+        "gpa": 3.41,
+        "cgpa": 3.33,
+        "courses": [
+          {
+            "courseCode": "CSC211",
+            "marks": 77
+          },
+          {
+            "courseCode": "CSC371",
+            "marks": 83
+          },
+          {
+            "courseCode": "CSC495",
+            "marks": 82
+          },
+          {
+            "courseCode": "CSE304",
+            "marks": 88
+          },
+          {
+            "courseCode": "MTH242",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2023",
+        "gpa": 3.51,
+        "cgpa": 3.39,
+        "courses": [
+          {
+            "courseCode": "CSC232",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC336",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSC354",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSE302",
+            "marks": 90
+          },
+          {
+            "courseCode": "CSE305",
+            "marks": 91
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2023",
+        "gpa": 3.54,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC455",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSE303",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSE354",
+            "marks": 95
+          },
+          {
+            "courseCode": "MGT101",
+            "marks": 82
+          },
+          {
+            "courseCode": "MGT350",
+            "marks": 71
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2024",
+        "gpa": 3.56,
+        "cgpa": 3.41,
+        "courses": [
+          {
+            "courseCode": "CSC356",
+            "marks": 72
+          },
+          {
+            "courseCode": "CSC432",
+            "marks": 70
+          },
+          {
+            "courseCode": "CSE498",
+            "marks": 97
+          },
+          {
+            "courseCode": "MGT403",
+            "marks": 91
+          },
+          {
+            "courseCode": "MTH262",
+            "marks": 96
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "regNo": "sp21-bse-006",
+    "resultCard": [
+      {
+        "semester": "Spring 2021",
+        "gpa": 3.32,
+        "cgpa": 3.32,
+        "courses": [
+          {
+            "courseCode": "CSC101",
+            "marks": 76
+          },
+          {
+            "courseCode": "EEE121",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM100",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM110",
+            "marks": 83
+          },
+          {
+            "courseCode": "MTH104",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2021",
+        "gpa": 3.48,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC102",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC103",
+            "marks": 85
+          },
+          {
+            "courseCode": "CSC110",
+            "marks": 75
+          },
+          {
+            "courseCode": "HUM103",
+            "marks": 78
+          },
+          {
+            "courseCode": "HUM111",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH105",
+            "marks": 93
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2022",
+        "gpa": 3.38,
+        "cgpa": 3.31,
+        "courses": [
+          {
+            "courseCode": "CSC241",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSC339",
+            "marks": 71
+          },
+          {
+            "courseCode": "CSE291",
+            "marks": 68
+          },
+          {
+            "courseCode": "EEE241",
+            "marks": 80
+          },
+          {
+            "courseCode": "HUM102",
+            "marks": 85
+          },
+          {
+            "courseCode": "MTH231",
+            "marks": 80
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2022",
+        "gpa": 3.41,
+        "cgpa": 3.33,
+        "courses": [
+          {
+            "courseCode": "CSC211",
+            "marks": 77
+          },
+          {
+            "courseCode": "CSC371",
+            "marks": 83
+          },
+          {
+            "courseCode": "CSC495",
+            "marks": 82
+          },
+          {
+            "courseCode": "CSE304",
+            "marks": 88
+          },
+          {
+            "courseCode": "MTH242",
+            "marks": 90
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2023",
+        "gpa": 3.51,
+        "cgpa": 3.39,
+        "courses": [
+          {
+            "courseCode": "CSC232",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSC336",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSC354",
+            "marks": 80
+          },
+          {
+            "courseCode": "CSE302",
+            "marks": 90
+          },
+          {
+            "courseCode": "CSE305",
+            "marks": 91
+          }
+        ]
+      },
+      {
+        "semester": "Fall 2023",
+        "gpa": 3.54,
+        "cgpa": 3.4,
+        "courses": [
+          {
+            "courseCode": "CSC455",
+            "marks": 87
+          },
+          {
+            "courseCode": "CSE303",
+            "marks": 86
+          },
+          {
+            "courseCode": "CSE354",
+            "marks": 95
+          },
+          {
+            "courseCode": "MGT101",
+            "marks": 82
+          },
+          {
+            "courseCode": "MGT350",
+            "marks": 71
+          }
+        ]
+      },
+      {
+        "semester": "Spring 2024",
+        "gpa": 3.56,
+        "cgpa": 3.41,
+        "courses": [
+          {
+            "courseCode": "CSC356",
+            "marks": 72
+          },
+          {
+            "courseCode": "CSC432",
+            "marks": 70
+          },
+          {
+            "courseCode": "CSE498",
+            "marks": 97
+          },
+          {
+            "courseCode": "MGT403",
+            "marks": 91
+          },
+          {
+            "courseCode": "MTH262",
+            "marks": 96
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,19 +1,18 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
-import MagicButton from "../Gen/Button";
-import TableComponent from "../Gen/Table";
-import PreLayout from "@/layout/Layout";
-import { useDbContext } from "@/context/dbContext";
-import WelcomeComponent from "../Gen/Welcome";
-import Overlay from "../Gen/Overlay";
 import { useAppContext } from "@/context/AppContext";
+import { useDbContext } from "@/context/dbContext";
+import PreLayout from "@/layout/Layout";
+import { useCallback, useEffect, useState } from "react";
+import WelcomeComponent from "../Gen/Welcome";
+import TableComponent from "../Gen/Table";
+import MagicButton from "../Gen/Button";
+import Overlay from "../Gen/Overlay";
 
 const AdvisorPage = ({ session }) => {
   const { dbData } = useDbContext();
-  const { showPopup, togglePopup } = useAppContext();
+  const { showPopup, togglePopup, selectedRows } = useAppContext();
   const [data, setData] = useState(null);
   const [studentType, setStudentType] = useState("all"); // Filter for student types
-
   const lowCgpaThreshold = 2.0;
 
   const getData = useCallback(() => {
@@ -31,59 +30,117 @@ const AdvisorPage = ({ session }) => {
         (cls) => cls.id === assignedClassId
       );
 
-      const isFirstSemester = assignedClass.semester === 1; // First semester check
+      // Ensure assignedClass and its students are defined before proceeding
+      if (!assignedClass || !assignedClass.students) {
+        console.error("Assigned class or students data is missing.");
+        return;
+      }
 
-      const studentsInClass = assignedClass.students.map((regNo) =>
-        dbData.students.find((student) => student.regNo === regNo)
-      );
-
-      const studentsWithDetails = studentsInClass.map((student) => {
+      // Determine if any student is in their first semester based on resultCard.length
+      const isFirstSemester = assignedClass.students.some((regNo) => {
+        const student = dbData.students.find((s) => s.regNo === regNo);
         const result = dbData.results.find(
-          (res) => res.regNo === student.regNo
+          (res) => res.regNo === student?.regNo
         );
-        const mostRecentCgpa =
-          result?.resultCard?.[result.resultCard.length - 1]?.cgpa || null;
-        const failedCourses = result?.resultCard.reduce((failed, semester) => {
-          semester.courses.forEach((course) => {
-            if (course.marks < 50) failed.push(course.courseCode);
-          });
-          return failed;
-        }, []);
-        const enrolledCourses = result?.resultCard.reduce(
-          (courses, semester) => {
-            semester.courses.forEach((course) => {
-              if (!courses.includes(course.courseCode)) {
-                courses.push(course.courseCode);
-              }
-            });
-            return courses;
-          },
-          []
-        );
-
-        const isFirstSemester =
-          result.resultCard.length === 1 &&
-          result.resultCard[0].semester === "Spring 2021";
-
-        return {
-          id: student.id,
-          regNo: student.regNo,
-          name: student.name,
-          cgpa: mostRecentCgpa,
-          failedCourses: failedCourses.length ? failedCourses : [],
-          enrolledCourses: enrolledCourses.length ? enrolledCourses : [],
-          isFirstSemester, // Adding this check
-        };
+        return result?.resultCard?.length === 0; // If resultCard length is 0, it's their first semester
       });
+
+      const studentsWithDetails = assignedClass.students
+        .map((regNo) => {
+          const student = dbData.students.find((s) => s.regNo === regNo);
+          if (!student) return null; // Check if the student exists
+
+          const result = dbData.results.find((r) => r.regNo === student.regNo);
+          if (!result) return null; // Check if result exists for the student
+
+          const mostRecentCgpa =
+            result?.resultCard?.[result.resultCard.length - 1]?.cgpa || null;
+
+          // Arrays to hold failed courses
+          const failedCourses = result?.resultCard?.reduce(
+            (failed, semester) => {
+              semester.courses.forEach((course) => {
+                if (course.marks < 50) failed.push(course.courseCode);
+              });
+              return failed;
+            },
+            []
+          );
+
+          const totalPassedCreditHours = result?.resultCard?.reduce(
+            (total, semester) => {
+              semester.courses.forEach((course) => {
+                if (course.marks >= 50) {
+                  const courseData = dbData.courses.find(
+                    (dbCourse) => dbCourse.id === course.courseCode
+                  );
+                  if (courseData) {
+                    const creditHoursString = courseData.credit_hours;
+                    const creditHours = parseInt(
+                      creditHoursString.split("(")[0],
+                      10
+                    );
+                    if (!isNaN(creditHours)) {
+                      total += creditHours;
+                    }
+                  }
+                }
+              });
+              return total;
+            },
+            0
+          );
+
+          // Enrolled courses
+          const enrolledCourses = result?.resultCard?.reduce(
+            (courses, semester) => {
+              semester.courses.forEach((course) => {
+                if (!courses.includes(course.courseCode)) {
+                  courses.push(course.courseCode);
+                }
+              });
+              return courses;
+            },
+            []
+          );
+
+          // Logic for determining the student type (regular, repeaters, lowCgpa)
+          let studentType = "regular"; // Default type
+          const assignedCourses = data?.schemeOfStudy?.courses
+            ?.filter((course) => course.isAssigned)
+            .map((course) => course.id);
+
+          if (student.cgpa < lowCgpaThreshold) {
+            studentType = "lowCgpa";
+          } else if (
+            failedCourses.length > 0 ||
+            assignedCourses?.some(
+              (assigned) => !student.enrolledCourses.includes(assigned)
+            )
+          ) {
+            studentType = "repeaters";
+          }
+
+          return {
+            id: student.id,
+            regNo: student.regNo,
+            name: student.name,
+            cgpa: mostRecentCgpa,
+            failedCourses: failedCourses.length ? failedCourses : [],
+            enrolledCourses: enrolledCourses.length ? enrolledCourses : [],
+            totalPassedCreditHours: totalPassedCreditHours || 0, // Default to 0 if null
+            type: studentType, // Add type property
+          };
+        })
+        .filter(Boolean); // Filter out null students
 
       const schemeOfStudy = dbData.schemeOfStudy.find(
         (sos) => sos.id === assignedClass.sosId
       );
+      if (!schemeOfStudy) return;
 
-      // Process courses with `isAssigned` property
       const updatedCourses = schemeOfStudy.courses.map((courseId) => {
         const course = dbData.courses.find((crc) => crc.id === courseId);
-
         const isAssigned = studentsWithDetails.some((student) =>
           dbData.results
             ?.find((res) => res.regNo === student.regNo)
@@ -93,7 +150,6 @@ const AdvisorPage = ({ session }) => {
               )
             )
         );
-
         return {
           ...course,
           isAssigned, // Add the `isAssigned` property to the course
@@ -103,7 +159,7 @@ const AdvisorPage = ({ session }) => {
       const finalData = {
         className: assignedClass.classname,
         isFirstSemester, // Add this to the class object
-        students: studentsWithDetails.filter(Boolean),
+        students: studentsWithDetails,
         schemeOfStudy: {
           ...schemeOfStudy,
           courses: updatedCourses.filter(Boolean),
@@ -112,23 +168,24 @@ const AdvisorPage = ({ session }) => {
 
       setData(finalData);
 
+      // Store data in sessionStorage only on client-side
       if (typeof window !== "undefined") {
         sessionStorage.setItem("DataforAdvisorPage", JSON.stringify(finalData));
       }
     } catch (error) {
-      console.error("Error fetching advisor data:", error);
+      console.log("Error fetching advisor data:", error);
       setData(null);
     }
-  }, [session, dbData]);
+  }, [dbData, session]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedData = sessionStorage.getItem("DataforAdvisorPage");
       if (storedData) {
         setData(JSON.parse(storedData));
-      } else {
-        getData();
+        return;
       }
+      getData();
     }
   }, [getData]);
 
@@ -142,24 +199,65 @@ const AdvisorPage = ({ session }) => {
         return students;
 
       case "regular":
-        return students.filter(
-          (student) =>
-            (!student.failedCourses || student.failedCourses.length === 0) &&
-            student.cgpa >= lowCgpaThreshold
-        );
+        return students.filter((student) => {
+          const assignedCourses = data.schemeOfStudy?.courses
+            ?.filter((course) => course.isAssigned)
+            .map((course) => course.id); // Get all assigned courses
+
+          return (
+            (!student.failedCourses || student.failedCourses.length === 0) && // No failed courses
+            student.cgpa >= lowCgpaThreshold && // CGPA should be >= 2.0
+            assignedCourses.every(
+              (assigned) => student.enrolledCourses.includes(assigned) // All assigned courses must be enrolled
+            )
+          );
+        });
 
       case "repeaters":
-        return students.filter(
-          (student) => student.failedCourses && student.failedCourses.length > 0
-        );
+        return students.filter((student) => {
+          const assignedCourses = data.schemeOfStudy?.courses
+            ?.filter((course) => course.isAssigned)
+            .map((course) => course.id);
+
+          return (
+            student.cgpa > lowCgpaThreshold &&
+            (student.failedCourses?.length > 0 || // Include students who have failed courses
+              assignedCourses.some(
+                (assigned) => !student.enrolledCourses.includes(assigned) // Include students who haven't enrolled in assigned courses
+              ))
+          );
+        });
 
       case "lowCgpa":
-        return students.filter((student) => student.cgpa < lowCgpaThreshold);
+        return students.filter((student) => {
+          const assignedCourses = data.schemeOfStudy?.courses
+            ?.filter((course) => course.isAssigned)
+            .map((course) => course.id);
+
+          return (
+            student.cgpa < lowCgpaThreshold && // CGPA should be less than the threshold
+            (student.failedCourses?.length > 0 || // Include students who have failed courses
+              assignedCourses.some(
+                (assigned) => !student.enrolledCourses.includes(assigned) // Include students who haven't enrolled in assigned courses
+              ))
+          );
+        });
 
       default:
         return students;
     }
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedData = sessionStorage.getItem("DataforAdvisorPage");
+      if (storedData) {
+        setData(JSON.parse(storedData));
+        return;
+      }
+      getData();
+    }
+  }, [getData]);
 
   const filterCoursesByStudentType = () => {
     if (!data) return [];
@@ -167,54 +265,157 @@ const AdvisorPage = ({ session }) => {
     const courses = data?.schemeOfStudy?.courses;
 
     if (studentType === "regular") {
+      // First Semester: Include all courses except those with pre-requisites
       if (data?.isFirstSemester) {
         return courses?.filter(
           (course) =>
-            !course.pre_requisites || course.pre_requisites.length === 0
+            course.isOffered && // Only offered courses
+            (!course.pre_requisites || course.pre_requisites.length === 0) // Exclude courses with pre-requisites
         );
       }
 
+      // Regular Students (Non-First Semester)
       return courses?.filter(
         (course) =>
-          course.isOffered &&
-          !course.isEnrolled &&
+          course.isOffered && // Only offered courses
+          !course.isAssigned && // Exclude already assigned courses
           course.pre_requisites?.every((prerequisite) =>
-            data.students.some((student) =>
-              student.enrolledCourses.includes(prerequisite)
+            data.students.some(
+              (student) => student.enrolledCourses.includes(prerequisite) // Confirm all pre-requisites
             )
           )
       );
     }
 
     if (studentType === "repeaters") {
-      return courses?.filter(
-        (course) =>
-          course.isAssigned && // Show only assigned courses
-          !course.isEnrolled && // Filter out already enrolled courses
-          course.isFailed &&
-          course.pre_requisites?.every((prerequisite) =>
-            data.students.some((student) =>
-              student.enrolledCourses.includes(prerequisite)
-            )
-          )
-      );
+      return courses?.filter((course) => {
+        return (
+          // Courses where the student has failed
+          data.students.some((student) =>
+            student.failedCourses.includes(course.id)
+          ) ||
+          // Courses that are assigned but not yet enrolled
+          (course.isAssigned &&
+            !data.students.some((student) =>
+              student.enrolledCourses.includes(course.id)
+            )) ||
+          // Courses that are not assigned yet
+          !course.isAssigned
+        );
+      });
     }
-
     if (studentType === "lowCgpa") {
-      return courses?.filter(
-        (course) =>
-          (course.courseType === "Core" || course.courseType === "Mandatory") &&
-          course.isAssigned && // Only show assigned courses
-          !course.isEnrolled &&
-          course.pre_requisites?.every((prerequisite) =>
-            data.students.some((student) =>
-              student.enrolledCourses.includes(prerequisite)
-            )
-          )
-      );
+      return courses?.filter((course) => {
+        return (
+          // Courses where the student has failed
+          data.students.some((student) =>
+            student.failedCourses.includes(course.id)
+          ) ||
+          // Courses that are assigned but not yet enrolled
+          (course.isAssigned &&
+            !data.students.some((student) =>
+              student.enrolledCourses.includes(course.id)
+            )) ||
+          // Courses that are not assigned yet
+          !course.isAssigned
+        );
+      });
     }
 
     return [];
+  };
+
+  const handleAssignCourses = () => {
+    // Filter the selected courses based on the selected rows
+    const selectedCourses = filterCoursesByStudentType().filter((course) =>
+      selectedRows.includes(course.id)
+    );
+
+    if (selectedCourses.length === 0) {
+      alert("Please select at least one course to assign.");
+      return;
+    }
+
+    // Calculate the total selected credit hours
+    const totalSelectedCreditHours = selectedCourses.reduce((total, course) => {
+      const creditHoursString = course.credit_hours.split("(")[0].trim();
+      const creditHours = parseInt(creditHoursString, 10);
+      return total + creditHours;
+    }, 0);
+
+    console.log("Selected Courses: ", selectedCourses);
+    console.log("Total Selected Credit Hours: ", totalSelectedCreditHours);
+
+    // Set maximum credit hours
+    const maxCreditHoursPerStudent = studentType === "lowCgpa" ? 15 : 22;
+
+    // Validate credit hour limits for the selected student type
+    const creditHoursExceeded = data.students.some((student) => {
+      if (student.type === studentType) {
+        const currentTotalCreditHours = student.hasLearnedTotalCreditHours || 0;
+        return (
+          currentTotalCreditHours + totalSelectedCreditHours >
+          maxCreditHoursPerStudent
+        );
+      }
+      return false;
+    });
+
+    if (creditHoursExceeded) {
+      alert(
+        `Total credit hours for ${studentType} students exceed the limit of ${maxCreditHoursPerStudent}.`
+      );
+      return;
+    }
+
+    // Update student data
+    const updatedStudents = data.students.map((student) => {
+      if (student.type === studentType) {
+        // Update only for students of the selected type
+        return {
+          ...student,
+          assignedCourses: [
+            ...(student.assignedCourses || []),
+            ...selectedCourses.map((course) => course.id),
+          ],
+          hasLearnedTotalCreditHours:
+            (student.hasLearnedTotalCreditHours || 0) +
+            totalSelectedCreditHours,
+        };
+      }
+      // Ensure others have an empty `assignedCourses` array
+      return {
+        ...student,
+        assignedCourses: [],
+      };
+    });
+
+    // Update the `isAssigned` property for courses
+    const updatedCourses = data.schemeOfStudy.courses.map((course) => {
+      if (selectedRows.includes(course.id)) {
+        return { ...course, isAssigned: true }; // Mark as assigned
+      }
+      return course;
+    });
+
+    // Prepare updated data
+    const updatedData = {
+      ...data,
+      students: updatedStudents,
+      schemeOfStudy: {
+        ...data.schemeOfStudy,
+        courses: updatedCourses,
+      },
+    };
+
+    // Save the updated data
+    setData(updatedData);
+    console.log("Updated Data:", updatedData);
+
+    // Optionally store in sessionStorage
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("DataforAdvisorPage", JSON.stringify(updatedData));
+    }
   };
 
   return (
@@ -278,7 +479,12 @@ const AdvisorPage = ({ session }) => {
             actionBtns={
               <MagicButton title="View SOS" handleClick={togglePopup} />
             }
-            excludeColumns={["enrolledCourses"]}
+            excludeColumns={[
+              "isFirstSemester",
+              "enrolledCourses",
+              "type",
+              "failedCourses",
+            ]}
           />
         ) : (
           <p>No students found matching the selected filter.</p>
@@ -288,13 +494,18 @@ const AdvisorPage = ({ session }) => {
       )}
 
       {showPopup && (
-        <Overlay>
+        <>
           <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white z-50 p-2 rounded-lg w-[90%] max-h-[90vh] overflow-auto ">
             {filterCoursesByStudentType()?.length > 0 ? (
               <TableComponent
                 data={filterCoursesByStudentType()}
                 title={`${studentType} Students`}
-                actionBtns={<MagicButton title="Assign Courses" />}
+                actionBtns={
+                  <MagicButton
+                    title="Assign Courses"
+                    handleClick={handleAssignCourses}
+                  />
+                }
                 excludeColumns={["isOffered", "isAssigned", "failedByStudents"]}
                 checkBoxOption={true}
               />
@@ -302,7 +513,8 @@ const AdvisorPage = ({ session }) => {
               <p>No courses found for the selected filter.</p>
             )}
           </div>
-        </Overlay>
+          <Overlay />
+        </>
       )}
     </PreLayout>
   );

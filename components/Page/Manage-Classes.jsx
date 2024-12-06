@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useDbContext } from "@/context/dbContext";
 import { Dropdown } from "../Gen/InputField";
 import TableComponent from "../Gen/Table";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const ManageClasses = () => {
   const { showPopup, togglePopup } = useAppContext();
@@ -119,17 +119,17 @@ export const ManageIndividualClass = ({ slug }) => {
   const { dbData, setDbData } = useDbContext();
 
   const [activeDropdown, setActiveDropdown] = useState(null); // "advisor" or "sos"
-  const [uploaded, setUploaded] = useState(false);
+  const [uploaded, setUploaded] = useState(true);
 
   // const [isFlagActive, setIsFlagActive] = useState(false);
 
   // Check if the flag is stored in localStorage when the page loads
-  useEffect(() => {
-    const storedFlag = localStorage.getItem("isResultUploaded");
-    if (storedFlag === "true") {
-      setUploaded(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedFlag = localStorage.getItem("isResultUploaded");
+  //   if (storedFlag === "true") {
+  //     setUploaded(true);
+  //   }
+  // }, []);
 
   // Early returns for loading and no data scenarios
   if (!dbData) return <div>Loading Manage Individual Class...</div>;
@@ -249,8 +249,8 @@ export const ManageIndividualClass = ({ slug }) => {
       return { ...prev, results: updatedResults, students: updatedStudents };
     });
 
-    setUploaded(true);
-    sessionStorage.setItem("isResultUploaded", newFlagState.toString());
+    setUploaded(false);
+    // sessionStorage.setItem("isResultUploaded", newFlagState.toString());
   };
   return (
     <PreLayout>

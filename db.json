@@ -98,9 +98,7 @@
       "course_code": "CSC211",
       "course_title": "Data Structures and Algorithms",
       "credit_hours": "4(3,1)",
-      "pre_requisites": [
-        "CSC103"
-      ],
+      "pre_requisites": ["CSC103"],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -109,9 +107,7 @@
       "course_code": "CSC241",
       "course_title": "Object Oriented Programming",
       "credit_hours": "4(3,1)",
-      "pre_requisites": [
-        "CSC103"
-      ],
+      "pre_requisites": ["CSC103"],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -120,9 +116,7 @@
       "course_code": "CSC322",
       "course_title": "Operating Systems",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC211"
-      ],
+      "pre_requisites": ["CSC211"],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -149,9 +143,7 @@
       "course_code": "CSC371",
       "course_title": "Database Systems I",
       "credit_hours": "4(3,1)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -178,12 +170,7 @@
       "course_code": "CSE498",
       "course_title": "Senior Design Project I",
       "credit_hours": "2(0,2)",
-      "pre_requisites": [
-        "CSC241",
-        "CSC371",
-        "CSE291",
-        "HUM102"
-      ],
+      "pre_requisites": ["CSC241", "CSC371", "CSE291", "HUM102"],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -192,9 +179,7 @@
       "course_code": "CSE499",
       "course_title": "Senior Design Project II",
       "credit_hours": "4(0,4)",
-      "pre_requisites": [
-        "CSE498"
-      ],
+      "pre_requisites": ["CSE498"],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -230,9 +215,7 @@
       "course_code": "HUM102",
       "course_title": "Report Writing Skills",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "HUM100"
-      ],
+      "pre_requisites": ["HUM100"],
       "courseType": "Computing General Education Courses",
       "isOffered": true
     },
@@ -241,9 +224,7 @@
       "course_code": "HUM103",
       "course_title": "Communication Skills",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "HUM100"
-      ],
+      "pre_requisites": ["HUM100"],
       "courseType": "Computing General Education Courses",
       "isOffered": true
     },
@@ -315,9 +296,7 @@
       "course_code": "CSC321",
       "course_title": "Microprocessor and Assembly Language",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "EEE241"
-      ],
+      "pre_requisites": ["EEE241"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -326,9 +305,7 @@
       "course_code": "CSC331",
       "course_title": "Digital Image Processing",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "MTH231"
-      ],
+      "pre_requisites": ["MTH231"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -337,9 +314,7 @@
       "course_code": "CSC334",
       "course_title": "Parallel and Distributed Computing",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC103"
-      ],
+      "pre_requisites": ["CSC103"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -348,9 +323,7 @@
       "course_code": "CSC347",
       "course_title": "Computational Intelligence",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -359,9 +332,7 @@
       "course_code": "CSC402",
       "course_title": "Database Systems II",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSC371"
-      ],
+      "pre_requisites": ["CSC371"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -370,9 +341,7 @@
       "course_code": "CSC412",
       "course_title": "Visual Programming",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -399,9 +368,7 @@
       "course_code": "CSC430",
       "course_title": "Wireless Networks",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC339"
-      ],
+      "pre_requisites": ["CSC339"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -410,9 +377,7 @@
       "course_code": "CSC443",
       "course_title": "Scripting Languages",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -421,9 +386,7 @@
       "course_code": "CSC451",
       "course_title": "Introduction to Modeling and Simulation",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC211"
-      ],
+      "pre_requisites": ["CSC211"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -432,9 +395,7 @@
       "course_code": "CSC454",
       "course_title": "Pattern Recognition",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSC354"
-      ],
+      "pre_requisites": ["CSC354"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -443,9 +404,7 @@
       "course_code": "CSC455",
       "course_title": "Computer Vision",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "MTH231"
-      ],
+      "pre_requisites": ["MTH231"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -454,9 +413,7 @@
       "course_code": "CSC461",
       "course_title": "Introduction to Data Science",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "MTH262"
-      ],
+      "pre_requisites": ["MTH262"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -465,9 +422,7 @@
       "course_code": "CSC462",
       "course_title": "Artificial Intelligence",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC1"
-      ],
+      "pre_requisites": ["CSC1"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -476,9 +431,7 @@
       "course_code": "CSC471",
       "course_title": "Distributed Database Systems",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSC371"
-      ],
+      "pre_requisites": ["CSC371"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -487,9 +440,7 @@
       "course_code": "CSC482",
       "course_title": "Systems and Networks Administration",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC339"
-      ],
+      "pre_requisites": ["CSC339"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -498,9 +449,7 @@
       "course_code": "CSC495",
       "course_title": "Game Development",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -509,9 +458,7 @@
       "course_code": "CSE300",
       "course_title": "Software Metrics",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -601,9 +548,7 @@
       "course_code": "CSE356",
       "course_title": "Formal Methods",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -639,9 +584,7 @@
       "course_code": "CSC433",
       "course_title": "Cryptography and Network Security",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSC339"
-      ],
+      "pre_requisites": ["CSC339"],
       "courseType": "Enterprise Security Architecture",
       "isOffered": true
     },
@@ -659,9 +602,7 @@
       "course_code": "CSC496",
       "course_title": "Data Warehousing and Data Mining",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC371"
-      ],
+      "pre_requisites": ["CSC371"],
       "courseType": "Information Systems and Data Processing",
       "isOffered": false
     },
@@ -832,9 +773,7 @@
       "course_code": "CSC353",
       "course_title": "Computer Graphics",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "MTH231"
-      ],
+      "pre_requisites": ["MTH231"],
       "courseType": "Scientific Systems",
       "isOffered": false
     },
@@ -852,9 +791,7 @@
       "course_code": "CSE302",
       "course_title": "Software Quality Engineering",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -863,9 +800,7 @@
       "course_code": "CSE303",
       "course_title": "Software Design and Architecture",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -874,9 +809,7 @@
       "course_code": "CSE304",
       "course_title": "Object Oriented Software Engineering",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -885,9 +818,7 @@
       "course_code": "CSE305",
       "course_title": "Software Requirement Engineering",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -896,9 +827,7 @@
       "course_code": "CSE455",
       "course_title": "Software Testing",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSE302"
-      ],
+      "pre_requisites": ["CSE302"],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -907,9 +836,7 @@
       "course_code": "CSE494",
       "course_title": "Software Project Management",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSE291"
-      ],
+      "pre_requisites": ["CSE291"],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -1017,9 +944,7 @@
       "course_code": "PHY229",
       "course_title": "Modern Physics",
       "credit_hours": "4(3,1)",
-      "pre_requisites": [
-        "PHY120"
-      ],
+      "pre_requisites": ["PHY120"],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": false
     },
@@ -1037,9 +962,7 @@
       "course_code": "CSC475",
       "course_title": "Numerical Computing",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "MTH104"
-      ],
+      "pre_requisites": ["MTH104"],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": true
     },
@@ -1048,9 +971,7 @@
       "course_code": "MTH105",
       "course_title": "Multivariable Calculus",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "MTH104"
-      ],
+      "pre_requisites": ["MTH104"],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": true
     },
@@ -1077,9 +998,7 @@
       "course_code": "MTH242",
       "course_title": "Differential Equations",
       "credit_hours": "3(3,0)",
-      "pre_requisites": [
-        "MTH104"
-      ],
+      "pre_requisites": ["MTH104"],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": true
     },
@@ -1097,9 +1016,7 @@
       "course_code": "CSC303",
       "course_title": "Mobile Application Development",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "Web Technologies",
       "isOffered": true
     },
@@ -1108,9 +1025,7 @@
       "course_code": "CSC336",
       "course_title": "Web Technologies",
       "credit_hours": "3(2,1)",
-      "pre_requisites": [
-        "CSC241"
-      ],
+      "pre_requisites": ["CSC241"],
       "courseType": "Web Technologies",
       "isOffered": true
     },
@@ -1145,8 +1060,7 @@
         "sp21-bse-006"
       ],
       "advisorId": "Advisor6387e614-4a2d-4471-953c-8afe1ce7ff4a",
-      "sosId": "sos007e7cd8-8b4f-4ae7-b310-d21eff3b163e",
-      "isFirstSemester": false
+      "sosId": "sos007e7cd8-8b4f-4ae7-b310-d21eff3b163e"
     }
   ],
   "results": [

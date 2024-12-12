@@ -55,6 +55,216 @@
       "password": "std123",
       "id": "Student8ea83608-e44e-4b1e-82e1-ae97dcf1c262",
       "resultId": "75d552fa-a153-4e81-98f5-0545e030a51c"
+    },
+    {
+      "regNo": "sp22-bse-001",
+      "name": "Ahmad",
+      "email": "sp22-bse-001@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student14dcb7df-68e9-4541-aeac-282f3933869c"
+    },
+    {
+      "regNo": "sp22-bse-002",
+      "name": "Usman",
+      "email": "sp22-bse-002@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student53e07d3c-b309-475d-ba0b-4fc5bfd0bd76"
+    },
+    {
+      "regNo": "sp22-bse-003",
+      "name": "Aneesa",
+      "email": "sp22-bse-003@students.cuisahiwal.edu.pk",
+      "password": "std123k",
+      "id": "Studente238f5f9-c817-449a-be7b-29aa2c8f2be0"
+    },
+    {
+      "regNo": "sp22-bse-004",
+      "name": "Javed",
+      "email": "sp22-bse-004@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student477d8b8c-c016-4e18-8815-4e7f09e5d0f4"
+    },
+    {
+      "regNo": "sp22-bse-005",
+      "name": "Shahid",
+      "email": "sp22-bse-004@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentc371bdde-ff1e-4d7a-89dc-53e7d066c43d"
+    },
+    {
+      "regNo": "sp22-bse-006",
+      "name": "Bilal",
+      "email": "sp22-bse-006@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentf5e648e4-2299-4c47-82d9-1e0ac2981b25"
+    },
+    {
+      "regNo": "sp22-bse-007",
+      "name": "Ali",
+      "email": "sp22-bse-007@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentcb5f6f79-9353-40c0-818a-6f5264ff3fdd"
+    },
+    {
+      "regNo": "sp22-bse-008",
+      "name": "Sara",
+      "email": "sp22-bse-008@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentd4e4949c-295f-49a4-9981-907794e1d5d2"
+    },
+    {
+      "regNo": "sp22-bse-009",
+      "name": "Zain",
+      "email": "sp22-bse-009@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentb5a2f31d-5e44-485c-a945-fe79e86c1fec"
+    },
+    {
+      "regNo": "sp22-bse-010",
+      "name": "Fatima",
+      "email": "sp22-bse-010@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student0de2b94d-0528-47fc-b64a-fdbc82e31255"
+    },
+    {
+      "regNo": "sp22-bse-011",
+      "name": "Taha",
+      "email": "sp22-bse-011@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentada1eac4-34a9-49f3-9e1b-5a825c26e91f"
+    },
+    {
+      "regNo": "sp22-bse-012",
+      "name": "Ayesha",
+      "email": "sp22-bse-012@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studenta2ecba4c-4989-43c9-8611-9f0f3d9af908"
+    },
+    {
+      "regNo": "sp22-bse-013",
+      "name": "Hamza",
+      "email": "sp22-bse-013@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student73172dc9-06ea-41a6-9cfd-af7339e7941d"
+    },
+    {
+      "regNo": "sp22-bse-014",
+      "name": "Iqra",
+      "email": "sp22-bse-014@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentb6d6b413-cdd3-4813-9848-fcf7cae85631"
+    },
+    {
+      "regNo": "sp22-bse-015",
+      "name": "Kamran",
+      "email": "sp22-bse-015@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentf0e17e2e-e351-4246-b604-33020dceb319"
+    },
+    {
+      "regNo": "sp22-bse-016",
+      "name": "Maryam",
+      "email": "sp22-bse-016@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentfd805294-e8fc-4d42-92c0-92aa0e51eb96"
+    },
+    {
+      "regNo": "sp22-bse-017",
+      "name": "Hiba",
+      "email": "sp22-bse-017@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentb4d0f0de-07c6-4462-8cfb-81180f4e7bf7"
+    },
+    {
+      "regNo": "sp22-bse-018",
+      "name": "Usama",
+      "email": "sp22-bse-018@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student5cdea0fc-230e-444d-b045-159d7e76d6f6"
+    },
+    {
+      "regNo": "sp22-bse-019",
+      "name": "Nida",
+      "email": "sp22-bse-019@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentc980c571-71c0-4971-b7c6-887c90a45c99"
+    },
+    {
+      "regNo": "sp22-bse-020",
+      "name": "Farhan",
+      "email": "sp22-bse-020@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentd76bc77b-d3f4-4ddd-b365-883443f41a42"
+    },
+    {
+      "regNo": "sp22-bse-021",
+      "name": "Rabia",
+      "email": "sp22-bse-021@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student828318f4-2541-4c6a-9cb2-4261dc0810b2"
+    },
+    {
+      "regNo": "sp22-bse-022",
+      "name": "Anwar",
+      "email": "sp22-bse-022@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student231aa172-59bf-4c14-bb49-554718f2bfe1"
+    },
+    {
+      "regNo": "sp22-bse-023",
+      "name": "Huma",
+      "email": "sp22-bse-023@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student90fb74fe-00c3-4bcb-8936-a7fdd366b6c8"
+    },
+    {
+      "regNo": "sp22-bse-024",
+      "name": "Saad",
+      "email": "sp22-bse-024@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student4619fb77-dc47-43dd-a30e-43159f2fcd97"
+    },
+    {
+      "regNo": "sp22-bse-025",
+      "name": "Madiha",
+      "email": "sp22-bse-025@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studenta3dabd8c-1043-4a84-b692-dd1406223f52"
+    },
+    {
+      "regNo": "sp22-bse-026",
+      "name": "Noman",
+      "email": "sp22-bse-026@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student26d1f940-c091-4eca-aba2-23ad7c636a53"
+    },
+    {
+      "regNo": "sp22-bse-027",
+      "name": "Lubna",
+      "email": "sp22-bse-027@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentb86ba007-d9dc-4297-a753-0e0439336adc"
+    },
+    {
+      "regNo": "sp22-bse-028",
+      "name": "Rashid",
+      "email": "sp22-bse-028@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student5ead92a9-eac3-434d-ad1c-5042839885f9"
+    },
+    {
+      "regNo": "sp22-bse-029",
+      "name": "Sidra",
+      "email": "sp22-bse-029@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentd4a8b254-47b9-47e2-b2dd-2d7484d08f04"
+    },
+    {
+      "regNo": "sp22-bse-030",
+      "name": "Hammad",
+      "email": "sp22-bse-030@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentc77ec275-728b-404a-b8f6-eba1297b225c"
     }
   ],
   "admins": [
@@ -98,7 +308,9 @@
       "course_code": "CSC211",
       "course_title": "Data Structures and Algorithms",
       "credit_hours": "4(3,1)",
-      "pre_requisites": ["CSC103"],
+      "pre_requisites": [
+        "CSC103"
+      ],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -107,7 +319,9 @@
       "course_code": "CSC241",
       "course_title": "Object Oriented Programming",
       "credit_hours": "4(3,1)",
-      "pre_requisites": ["CSC103"],
+      "pre_requisites": [
+        "CSC103"
+      ],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -116,7 +330,9 @@
       "course_code": "CSC322",
       "course_title": "Operating Systems",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC211"],
+      "pre_requisites": [
+        "CSC211"
+      ],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -143,7 +359,9 @@
       "course_code": "CSC371",
       "course_title": "Database Systems I",
       "credit_hours": "4(3,1)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -170,7 +388,12 @@
       "course_code": "CSE498",
       "course_title": "Senior Design Project I",
       "credit_hours": "2(0,2)",
-      "pre_requisites": ["CSC241", "CSC371", "CSE291", "HUM102"],
+      "pre_requisites": [
+        "CSC241",
+        "CSC371",
+        "CSE291",
+        "HUM102"
+      ],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -179,7 +402,9 @@
       "course_code": "CSE499",
       "course_title": "Senior Design Project II",
       "credit_hours": "4(0,4)",
-      "pre_requisites": ["CSE498"],
+      "pre_requisites": [
+        "CSE498"
+      ],
       "courseType": "Computing Core Courses",
       "isOffered": true
     },
@@ -215,7 +440,9 @@
       "course_code": "HUM102",
       "course_title": "Report Writing Skills",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["HUM100"],
+      "pre_requisites": [
+        "HUM100"
+      ],
       "courseType": "Computing General Education Courses",
       "isOffered": true
     },
@@ -224,7 +451,9 @@
       "course_code": "HUM103",
       "course_title": "Communication Skills",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["HUM100"],
+      "pre_requisites": [
+        "HUM100"
+      ],
       "courseType": "Computing General Education Courses",
       "isOffered": true
     },
@@ -296,7 +525,9 @@
       "course_code": "CSC321",
       "course_title": "Microprocessor and Assembly Language",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["EEE241"],
+      "pre_requisites": [
+        "EEE241"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -305,7 +536,9 @@
       "course_code": "CSC331",
       "course_title": "Digital Image Processing",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["MTH231"],
+      "pre_requisites": [
+        "MTH231"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -314,7 +547,9 @@
       "course_code": "CSC334",
       "course_title": "Parallel and Distributed Computing",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC103"],
+      "pre_requisites": [
+        "CSC103"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -323,7 +558,9 @@
       "course_code": "CSC347",
       "course_title": "Computational Intelligence",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -332,7 +569,9 @@
       "course_code": "CSC402",
       "course_title": "Database Systems II",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSC371"],
+      "pre_requisites": [
+        "CSC371"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -341,7 +580,9 @@
       "course_code": "CSC412",
       "course_title": "Visual Programming",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -368,7 +609,9 @@
       "course_code": "CSC430",
       "course_title": "Wireless Networks",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC339"],
+      "pre_requisites": [
+        "CSC339"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -377,7 +620,9 @@
       "course_code": "CSC443",
       "course_title": "Scripting Languages",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -386,7 +631,9 @@
       "course_code": "CSC451",
       "course_title": "Introduction to Modeling and Simulation",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC211"],
+      "pre_requisites": [
+        "CSC211"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -395,7 +642,9 @@
       "course_code": "CSC454",
       "course_title": "Pattern Recognition",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSC354"],
+      "pre_requisites": [
+        "CSC354"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -404,7 +653,9 @@
       "course_code": "CSC455",
       "course_title": "Computer Vision",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["MTH231"],
+      "pre_requisites": [
+        "MTH231"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -413,7 +664,9 @@
       "course_code": "CSC461",
       "course_title": "Introduction to Data Science",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["MTH262"],
+      "pre_requisites": [
+        "MTH262"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -422,7 +675,9 @@
       "course_code": "CSC462",
       "course_title": "Artificial Intelligence",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC1"],
+      "pre_requisites": [
+        "CSC1"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -431,7 +686,9 @@
       "course_code": "CSC471",
       "course_title": "Distributed Database Systems",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSC371"],
+      "pre_requisites": [
+        "CSC371"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -440,7 +697,9 @@
       "course_code": "CSC482",
       "course_title": "Systems and Networks Administration",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC339"],
+      "pre_requisites": [
+        "CSC339"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -449,7 +708,9 @@
       "course_code": "CSC495",
       "course_title": "Game Development",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -458,7 +719,9 @@
       "course_code": "CSE300",
       "course_title": "Software Metrics",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": true
     },
@@ -548,7 +811,9 @@
       "course_code": "CSE356",
       "course_title": "Formal Methods",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "CS and SE Elective Courses",
       "isOffered": false
     },
@@ -584,7 +849,9 @@
       "course_code": "CSC433",
       "course_title": "Cryptography and Network Security",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSC339"],
+      "pre_requisites": [
+        "CSC339"
+      ],
       "courseType": "Enterprise Security Architecture",
       "isOffered": true
     },
@@ -602,7 +869,9 @@
       "course_code": "CSC496",
       "course_title": "Data Warehousing and Data Mining",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC371"],
+      "pre_requisites": [
+        "CSC371"
+      ],
       "courseType": "Information Systems and Data Processing",
       "isOffered": false
     },
@@ -773,7 +1042,9 @@
       "course_code": "CSC353",
       "course_title": "Computer Graphics",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["MTH231"],
+      "pre_requisites": [
+        "MTH231"
+      ],
       "courseType": "Scientific Systems",
       "isOffered": false
     },
@@ -791,7 +1062,9 @@
       "course_code": "CSE302",
       "course_title": "Software Quality Engineering",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -800,7 +1073,9 @@
       "course_code": "CSE303",
       "course_title": "Software Design and Architecture",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -809,7 +1084,9 @@
       "course_code": "CSE304",
       "course_title": "Object Oriented Software Engineering",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -818,7 +1095,9 @@
       "course_code": "CSE305",
       "course_title": "Software Requirement Engineering",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -827,7 +1106,9 @@
       "course_code": "CSE455",
       "course_title": "Software Testing",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSE302"],
+      "pre_requisites": [
+        "CSE302"
+      ],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -836,7 +1117,9 @@
       "course_code": "CSE494",
       "course_title": "Software Project Management",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSE291"],
+      "pre_requisites": [
+        "CSE291"
+      ],
       "courseType": "Software Engineering Core Courses",
       "isOffered": true
     },
@@ -944,7 +1227,9 @@
       "course_code": "PHY229",
       "course_title": "Modern Physics",
       "credit_hours": "4(3,1)",
-      "pre_requisites": ["PHY120"],
+      "pre_requisites": [
+        "PHY120"
+      ],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": false
     },
@@ -962,7 +1247,9 @@
       "course_code": "CSC475",
       "course_title": "Numerical Computing",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["MTH104"],
+      "pre_requisites": [
+        "MTH104"
+      ],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": true
     },
@@ -971,7 +1258,9 @@
       "course_code": "MTH105",
       "course_title": "Multivariable Calculus",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["MTH104"],
+      "pre_requisites": [
+        "MTH104"
+      ],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": true
     },
@@ -998,7 +1287,9 @@
       "course_code": "MTH242",
       "course_title": "Differential Equations",
       "credit_hours": "3(3,0)",
-      "pre_requisites": ["MTH104"],
+      "pre_requisites": [
+        "MTH104"
+      ],
       "courseType": "Supporting Science Elective Courses",
       "isOffered": true
     },
@@ -1016,7 +1307,9 @@
       "course_code": "CSC303",
       "course_title": "Mobile Application Development",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "Web Technologies",
       "isOffered": true
     },
@@ -1025,7 +1318,9 @@
       "course_code": "CSC336",
       "course_title": "Web Technologies",
       "credit_hours": "3(2,1)",
-      "pre_requisites": ["CSC241"],
+      "pre_requisites": [
+        "CSC241"
+      ],
       "courseType": "Web Technologies",
       "isOffered": true
     },
@@ -1061,6 +1356,42 @@
       ],
       "advisorId": "Advisor6387e614-4a2d-4471-953c-8afe1ce7ff4a",
       "sosId": "sos007e7cd8-8b4f-4ae7-b310-d21eff3b163e"
+    },
+    {
+      "id": "Class6eff1171-e50f-4415-af07-7f1014c36c06",
+      "classname": "SP22-BSE-6A",
+      "students": [
+        "sp22-bse-001",
+        "sp22-bse-002",
+        "sp22-bse-003",
+        "sp22-bse-004",
+        "sp22-bse-005",
+        "sp22-bse-006",
+        "sp22-bse-007",
+        "sp22-bse-008",
+        "sp22-bse-009",
+        "sp22-bse-010",
+        "sp22-bse-011",
+        "sp22-bse-012",
+        "sp22-bse-013",
+        "sp22-bse-014",
+        "sp22-bse-015",
+        "sp22-bse-016",
+        "sp22-bse-017",
+        "sp22-bse-018",
+        "sp22-bse-019",
+        "sp22-bse-020",
+        "sp22-bse-021",
+        "sp22-bse-022",
+        "sp22-bse-023",
+        "sp22-bse-024",
+        "sp22-bse-025",
+        "sp22-bse-026",
+        "sp22-bse-027",
+        "sp22-bse-028",
+        "sp22-bse-029",
+        "sp22-bse-030"
+      ]
     }
   ],
   "results": [

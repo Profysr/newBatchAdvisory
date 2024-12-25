@@ -11,7 +11,7 @@ import { useDbContext } from "@/context/dbContext";
 
 const ManageAdvisors = () => {
   const { showPopup, togglePopup } = useAppContext();
-  const { dbData, setDbData, postData } = useDbContext();
+  const { dbData, setDbData } = useDbContext();
 
   const handleFileUpload = async (data) => {
     try {

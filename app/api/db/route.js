@@ -13,7 +13,14 @@ export async function GET(req) {
       const initialData = {
         advisors: [],
         students: [],
-        admins: [],
+        admins: [
+          {
+            id: "admin",
+            name: "admin",
+            email: "admin@gmail.com",
+            password: "admin",
+          },
+        ],
         courses: [],
         classes: [],
         results: [],
@@ -48,7 +55,14 @@ export async function POST(req) {
       existingData = {
         advisors: [],
         students: [],
-        admins: [],
+        admins: [
+          {
+            id: "admin",
+            name: "admin",
+            email: "admin@gmail.com",
+            password: "admin",
+          },
+        ],
         courses: [],
         classes: [],
         results: [],

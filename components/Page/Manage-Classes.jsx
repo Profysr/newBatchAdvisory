@@ -14,7 +14,59 @@ import { useState, useEffect } from "react";
 
 export const ManageClasses = () => {
   const { showPopup, togglePopup } = useAppContext();
-  const { dbData, setDbData, postData } = useDbContext();
+  const { dbData, setDbData } = useDbContext();
+
+  // const handleFileUpload = async (data) => {
+  //   try {
+  //     // Step 1: Parse the incoming data
+  //     const parsedData = JSON.parse(data);
+  //     const { classname, students } = parsedData;
+
+  //     // Step 2: Update the state
+  //     setDbData((prev) => {
+  //       let updatedClasses = [...(prev.classes || [])];
+
+  //       const classExists = prev.classes.some((cls) =>
+  //         cls.classname.toLowerCase().includes(classname.toLowerCase())
+  //       );
+
+  //       // If the class doesn't exist, add it
+  //       if (!classExists) {
+  //         updatedClasses.push({
+  //           id: `Class${uuidv4()}`, // Generate a unique ID for the class
+  //           classname,
+  //           students: students.map((std) => std.regNo), // Map students to their regNo
+  //         });
+  //       } else {
+  //         console.error(`Class ${classname} already exists.`);
+  //       }
+
+  //       // Step 3: Update students
+  //       let updatedStudents = [...(prev.students || [])];
+
+  //       students.forEach((student) => {
+  //         const stdExist = updatedStudents.some(
+  //           (std) => std.regNo === student.regNo
+  //         );
+  //         if (!stdExist) {
+  //           updatedStudents.push({
+  //             ...student,
+  //             id: `Student${uuidv4()}`, // Generate a unique ID for the student
+  //           });
+  //         }
+  //       });
+
+  //       // Step 4: Return the updated dbData state
+  //       return {
+  //         ...prev,
+  //         classes: updatedClasses,
+  //         students: updatedStudents,
+  //       };
+  //     });
+  //   } catch (error) {
+  //     console.error("Manage Class Error", error);
+  //   }
+  // };
 
   const handleFileUpload = async (data) => {
     try {
@@ -22,52 +74,11 @@ export const ManageClasses = () => {
       const parsedData = JSON.parse(data);
       const { classname, students } = parsedData;
 
-      // Step 2: Update the state
-      setDbData((prev) => {
-        let updatedClasses = [...(prev.classes || [])];
-
-        const classExists = prev.classes.some((cls) =>
-          cls.classname.toLowerCase().includes(classname.toLowerCase())
-        );
-
-        // If the class doesn't exist, add it
-        if (!classExists) {
-          updatedClasses.push({
-            id: `Class${uuidv4()}`, // Generate a unique ID for the class
-            classname,
-            students: students.map((std) => std.regNo), // Map students to their regNo
-          });
-        } else {
-          console.error(`Class ${classname} already exists.`);
-        }
-
-        // Step 3: Update students
-        let updatedStudents = [...(prev.students || [])];
-
-        students.forEach((student) => {
-          const stdExist = updatedStudents.some(
-            (std) => std.regNo === student.regNo
-          );
-          if (!stdExist) {
-            updatedStudents.push({
-              ...student,
-              id: `Student${uuidv4()}`, // Generate a unique ID for the student
-            });
-          }
-        });
-
-        // Step 4: Return the updated dbData state
-        return {
-          ...prev,
-          classes: updatedClasses,
-          students: updatedStudents,
-        };
-      });
+      console.log(classname, students);
     } catch (error) {
       console.error("Manage Class Error", error);
     }
   };
-
   const getAdvisorById = (advisorId) => {
     const advisor = dbData?.advisors?.find((adv) => adv.id === advisorId);
     return advisor ? advisor.name : null;

@@ -1,6 +1,71 @@
 {
-  "advisors": [],
-  "students": [],
+  "advisors": [
+    {
+      "id": "Advisor0b9f5472-101f-4644-b76f-1c91004fcdb0",
+      "name": "Yawar Abbas",
+      "email": "adv1@gmail.com",
+      "password": "adv1",
+      "assignedClass": ""
+    },
+    {
+      "id": "Advisorf82d734c-b028-4a9d-86e0-9174fbeafd84",
+      "name": "Bilal Ahmad",
+      "email": "adv2@gmail.com",
+      "password": "adv2",
+      "assignedClass": ""
+    },
+    {
+      "id": "Advisor3f56e381-5bb1-4899-8cd9-b74051fd8e71",
+      "name": "Javid Irshad",
+      "email": "adv3@gmail.com",
+      "password": "adv3",
+      "assignedClass": "Class5e172a28-c396-4d98-9d09-b8585353ae34"
+    },
+    {
+      "id": "Advisor01570c73-57a5-4f6e-a1cb-0be671e8fbf6",
+      "name": "M Saad ",
+      "email": "adv4@gmail.com",
+      "password": "adv4",
+      "assignedClass": ""
+    }
+  ],
+  "students": [
+    {
+      "regNo": "sp21-bse-001",
+      "name": "haseeb",
+      "email": "sp21-bse-001@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student3f6fac5d-785e-4453-b256-b50131da839c"
+    },
+    {
+      "regNo": "sp21-bse-002",
+      "name": "afifa",
+      "email": "sp21-bse-002@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentf3732ffc-7895-4bbb-a078-21dd3845594a"
+    },
+    {
+      "regNo": "sp21-bse-003",
+      "name": "anamta",
+      "email": "sp21-bse-003@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student8b37744c-7638-49be-91d9-f89f90441a62"
+    },
+    {
+      "regNo": "sp21-bse-004",
+      "name": "bilal",
+      "email": "sp21-bse-004@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Student6f6fad19-8cda-45da-98af-2dc8dfdd1ecc"
+    },
+    {
+      "regNo": "sp21-bse-006",
+      "name": "faisal",
+      "email": "sp21-bse-006@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "id": "Studentbe62ffe2-7495-4bf2-9af0-d499eec83480"
+    }
+  ],
   "admins": [
     {
       "id": "admin",
@@ -9,8 +74,83 @@
       "password": "admin"
     }
   ],
-  "courses": [],
-  "classes": [],
+  "courses": [
+    {
+      "id": "CSC101",
+      "courseCode": "CSC101",
+      "courseTitle": "Introduction to ICT",
+      "creditHours": "3(2,1)",
+      "preRequisites": "null",
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC102",
+      "courseCode": "CSC102",
+      "courseTitle": "Discrete Structures",
+      "creditHours": "3(3,0)",
+      "preRequisites": "null",
+      "courseType": "Computing Core Courses",
+      "isOffered": false
+    },
+    {
+      "id": "CSC103",
+      "courseCode": "CSC103",
+      "courseTitle": "Programming Fundamentals",
+      "creditHours": "4(3,1)",
+      "preRequisites": "null",
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC211",
+      "courseCode": "CSC211",
+      "courseTitle": "Data Structures and Algorithms",
+      "creditHours": "4(3,1)",
+      "preRequisites": "CSC103",
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    },
+    {
+      "id": "CSC241",
+      "courseCode": "CSC241",
+      "courseTitle": "Object Oriented Programming",
+      "creditHours": "4(3,1)",
+      "preRequisites": "CSC102,CSC103",
+      "courseType": "Computing Core Courses",
+      "isOffered": true
+    }
+  ],
+  "classes": [
+    {
+      "id": "Class5e172a28-c396-4d98-9d09-b8585353ae34",
+      "name": "sp21-bse",
+      "students": [
+        "sp21-bse-001",
+        "sp21-bse-002",
+        "sp21-bse-003",
+        "sp21-bse-004",
+        "sp21-bse-006"
+      ],
+      "advisorId": "Advisor3f56e381-5bb1-4899-8cd9-b74051fd8e71",
+      "sosId": "sosdb4ca1be-384e-4ecf-829d-d87fad056b99"
+    }
+  ],
   "results": [],
-  "schemeOfStudy": []
+  "schemeOfStudy": [
+    {
+      "id": "sosdb4ca1be-384e-4ecf-829d-d87fad056b99",
+      "name": "computer science",
+      "totalCreditHours": 133,
+      "minCreditHours": 12,
+      "maxCreditHours": 21,
+      "courses": [
+        "CSC101",
+        "CSC102",
+        "CSC103",
+        "CSC211",
+        "CSC241"
+      ]
+    }
+  ]
 }

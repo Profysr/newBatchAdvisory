@@ -17,11 +17,11 @@ const TableComponent = ({
 
   return (
     <div
-      className="w-fit max-w-[1080px] overflow-x-auto bg-transparent border border-black/20 rounded-sm"
+      className="w-fit max-w-[1080px] overflow-x-auto bg-transparent border border-gray-400 rounded-md"
       aria-label="Table"
     >
-      <div className="px-6 py-2 flex flex-col justify-start items-start gap-3 sm:flex-row sm:justify-between sm:items-center">
-        <div className="text-lg tracking-wide leading-relaxed text-center capitalize">
+      <div className="px-6 py-4 flex flex-col justify-start items-start gap-3 sm:flex-row sm:justify-between sm:items-center">
+        <div className="text-lg tracking-wide leading-relaxed text-center uppercase">
           {title}
         </div>
         {actionBtns && <div>{actionBtns}</div>}
@@ -55,7 +55,10 @@ export const TableGrid = ({
   const thead = keys.filter((key) => !excludeColumns.includes(key));
 
   return (
-    <table className="min-w-full block overflow-x-auto" aria-label="TableGrid">
+    <table
+      className="min-w-full block overflow-x-auto rounded-md"
+      aria-label="TableGrid"
+    >
       <thead className="bg-slate-900">
         <tr>
           {checkBoxOption ? (

@@ -1,49 +1,91 @@
 "use client";
 
-import Link from "next/link";
+// components
 import MagicButton from "../Gen/Button";
 import PopComponent from "../Gen/Popup";
 import Overlay from "../Gen/Overlay";
-import { useDbContext } from "@/context/dbContext";
-import { v4 as uuidv4 } from "uuid";
-import { useAppContext } from "@/context/AppContext";
 import PreLayout from "@/layout/Layout";
 import TableComponent from "../Gen/Table";
 
+// states and context
+import { useDbContext } from "@/context/dbContext";
+import { useAppContext } from "@/context/AppContext";
+import { useState } from "react";
+
+// libraries
+import Link from "next/link";
+import { v4 as uuidv4 } from "uuid";
+import { InputField } from "../Gen/InputField";
+
+// functions
+
+// Reuseable Components
+
+// ----------------------------------------
+//          Code Starts Here
+// ----------------------------------------
+
 export const ManageSos = () => {
+  const initialValue = {
+    name: "",
+    totalCreditHours: 133,
+    minCreditHours: 12,
+    maxCreditHours: 21,
+  };
   const { showPopup, togglePopup } = useAppContext();
   const { dbData, setDbData } = useDbContext();
+  const [sosRegulations, setSosRegulations] = useState(initialValue);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setSosRegulations((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleDelete = (id) => {
+    setDbData((prev) => ({
+      ...prev,
+      schemeOfStudy: prev?.schemeOfStudy?.filter((sos) => sos?.id !== id),
+    }));
+  };
 
   const handleFileUpload = (data) => {
-    const parsedData = JSON.parse(data);
-    const { name, courses } = parsedData;
+    const courses = data;
+
     setDbData((prev) => {
-      const sosExists = prev.schemeOfStudy.some((sos) =>
-        sos.name.toLowerCase().includes(name.toLowerCase())
+      const sosExists = prev?.schemeOfStudy?.some((sos) =>
+        sos?.name?.toLowerCase().includes(sosRegulations?.name?.toLowerCase())
       );
 
-      let updatedSchemeOfStudy = [...prev.schemeOfStudy];
+      let updatedSchemeOfStudy = [...prev?.schemeOfStudy];
       if (!sosExists) {
-        updatedSchemeOfStudy.push({
+        updatedSchemeOfStudy?.push({
           id: `sos${uuidv4()}`,
-          name,
-          courses: courses.map((c) => c.id),
+          ...sosRegulations,
+          courses: courses?.map((c) => c?.id),
         });
       } else {
         updatedSchemeOfStudy = updatedSchemeOfStudy.map((sos) => {
-          if (sos.name.toLowerCase().includes(name.toLowerCase())) {
+          if (
+            sos?.name
+              ?.toLowerCase()
+              .includes(sosRegulations?.name?.toLowerCase())
+          ) {
             const updatedCourses = Array.from(
-              new Set([...sos.courses, ...courses.map((c) => c.id)])
+              new Set([...sos?.courses, ...courses?.map((c) => c.id)])
             );
             return { ...sos, courses: updatedCourses };
           }
           return sos;
         });
       }
+
       // Update courses
       const updatedCourses = [...prev.courses];
-      courses.forEach((course) => {
-        const courseExists = updatedCourses.some((c) => c.id === course.id);
+      courses?.forEach((course) => {
+        const courseExists = updatedCourses?.some((c) => c?.id === course?.id);
         if (!courseExists) {
           updatedCourses.push(course);
         }
@@ -56,23 +98,33 @@ export const ManageSos = () => {
       };
     });
   };
+
   return (
     <PreLayout>
       <div className="w-full flex justify-between items-center">
         <h1 className="text-2xl font-bold">Schemes of Study</h1>
         <MagicButton title="Upload New SOS" handleClick={togglePopup} />
       </div>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {dbData?.schemeOfStudy.map((sos) => {
+      {/* <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {dbData?.schemeOfStudy?.map((sos) => {
           const totalCourses = sos?.courses?.length || 0; // Safely get the total number of courses
           return (
             <div
               key={sos?.id}
-              className="border rounded-lg p-4 shadow-sm bg-blue-200 backdrop:blur-md"
+              className="border rounded-lg p-4 shadow-sm bg-blue-200 backdrop:blur-md space-y-2"
             >
               <h2 className="font-bold text-lg capitalize">{sos?.name}</h2>
               <p className="text-sm text-gray-700 capitalize">
                 Total Courses: {totalCourses}
+              </p>
+              <p className="text-sm text-gray-700 capitalize">
+                Total Credit Hours: {sos?.totalCreditHours}
+              </p>
+              <p className="text-sm text-gray-700 capitalize">
+                Min. Credit Hours: {sos?.minCreditHours}
+              </p>
+              <p className="text-sm text-gray-700 capitalize">
+                Max. Credit Hours: {sos?.maxCreditHours}
               </p>
 
               <Link href={`/manage-sos/${sos?.id}`}>
@@ -83,17 +135,106 @@ export const ManageSos = () => {
             </div>
           );
         })}
+      </div> */}
+
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {dbData?.schemeOfStudy?.map((sos) => {
+          // const totalCourses = sos?.courses?.length || 0; // Safely get the total number of courses
+          return (
+            <div
+              key={sos?.id}
+              className="border rounded-lg p-4 shadow-sm bg-blue-200 backdrop:blur-md space-y-2"
+            >
+              <h2 className="font-bold text-lg capitalize">{sos?.name}</h2>
+              {/* <p className="text-sm text-gray-700 capitalize">
+                Total Courses: {totalCourses}
+              </p> */}
+              <p className="text-sm text-gray-700 capitalize">
+                Total Credit Hours: {sos?.totalCreditHours}
+              </p>
+              <p className="text-sm text-gray-700 capitalize">
+                Min. Credit Hours: {sos?.minCreditHours}
+              </p>
+              <p className="text-sm text-gray-700 capitalize">
+                Max. Credit Hours: {sos?.maxCreditHours}
+              </p>
+
+              <div className="flex gap-2">
+                <Link href={`/manage-sos/${sos?.id}`}>
+                  <button className="mt-4 px-4 py-2 bg-gray-800 text-white text-sm rounded-md hover:bg-gray-900 transition">
+                    View SOS
+                  </button>
+                </Link>
+                <button
+                  onClick={() => handleDelete(sos?.id)}
+                  className="mt-4 px-4 py-2 bg-red-600 text-white text-sm rounded-md hover:bg-red-700 transition"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {showPopup && (
         <>
-          <PopComponent handleFileUpload={handleFileUpload} />
+          <PopComponent
+            handleFileUpload={handleFileUpload}
+            inputField={
+              <div className="space-y-4">
+                <InputField
+                  id="name"
+                  name="name"
+                  title="Scheme of Study for"
+                  type="text"
+                  placeholder="Computer Science"
+                  value={sosRegulations?.name}
+                  onChange={handleInputChange}
+                  className="uppercase"
+                />
+                <div className="flex gap-2">
+                  <InputField
+                    id="totalCreditHours"
+                    name="totalCreditHours"
+                    title="Total Credit Hours"
+                    type="number"
+                    placeholder="133"
+                    value={sosRegulations?.totalCreditHours}
+                    onChange={handleInputChange}
+                  />
+                  <InputField
+                    id="minCreditHours"
+                    name="minCreditHours"
+                    title="Min. Credit Hours"
+                    type="number"
+                    placeholder="12"
+                    value={sosRegulations?.minCreditHours}
+                    onChange={handleInputChange}
+                  />
+                  <InputField
+                    id="maxCreditHours"
+                    name="maxCreditHours"
+                    title="Max. Credit Hours"
+                    type="number"
+                    placeholder="21"
+                    value={sosRegulations?.maxCreditHours}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+            }
+          />
           <Overlay />
         </>
       )}
     </PreLayout>
   );
 };
+
+// -----------------------------------------------------------
+//          Individual SOS Code Starts Here
+// -----------------------------------------------------------
 
 export const ManageIndividualSos = ({ slug }) => {
   const { selectedRows, setSelectedRows } = useAppContext();
@@ -123,8 +264,8 @@ export const ManageIndividualSos = ({ slug }) => {
         return prev;
       }
 
-      const updatedCourses = prev.courses.map((course) => {
-        if (selectedRows?.includes(course.id)) {
+      const updatedCourses = prev?.courses?.map((course) => {
+        if (selectedRows?.includes(course?.id)) {
           return { ...course, isOffered: false };
         }
         return { ...course, isOffered: true };
@@ -162,11 +303,11 @@ export const ManageIndividualSos = ({ slug }) => {
   return (
     <PreLayout>
       <h1 className="text-2xl font-bold capitalize">
-        Scheme of Study for {sos.name}
+        Scheme of Study for {sos?.name}
       </h1>
       <TableComponent
         data={courses}
-        key={`courses-${sos.id}`}
+        key={`courses-${sos?.id}`}
         checkBoxOption={true}
         actionBtns={actionBtns}
         excludeColumns={["isOffered"]}

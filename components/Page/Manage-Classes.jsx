@@ -1,84 +1,87 @@
 "use client";
 
-import { useAppContext } from "@/context/AppContext";
+// Components
 import PreLayout from "@/layout/Layout";
 import MagicButton from "../Gen/Button";
 import PopComponent from "../Gen/Popup";
 import Overlay from "../Gen/Overlay";
-import Link from "next/link";
-import { v4 as uuidv4 } from "uuid";
-import { useDbContext } from "@/context/dbContext";
-import { Dropdown } from "../Gen/InputField";
+import { Dropdown, InputField } from "../Gen/InputField";
 import TableComponent from "../Gen/Table";
-import { useState, useEffect } from "react";
+
+// States / Contexts
+import { useAppContext } from "@/context/AppContext";
+import { useDbContext } from "@/context/dbContext";
+import { useState, useRef } from "react";
+
+// libraries
+import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
+
+// functions
+
+// Resuable components
+
+// ----------------------------------------
+//          Code Starts Here
+// ----------------------------------------
 
 export const ManageClasses = () => {
+  const classnameRef = useRef(null);
   const { showPopup, togglePopup } = useAppContext();
   const { dbData, setDbData } = useDbContext();
-
-  // const handleFileUpload = async (data) => {
-  //   try {
-  //     // Step 1: Parse the incoming data
-  //     const parsedData = JSON.parse(data);
-  //     const { classname, students } = parsedData;
-
-  //     // Step 2: Update the state
-  //     setDbData((prev) => {
-  //       let updatedClasses = [...(prev.classes || [])];
-
-  //       const classExists = prev.classes.some((cls) =>
-  //         cls.classname.toLowerCase().includes(classname.toLowerCase())
-  //       );
-
-  //       // If the class doesn't exist, add it
-  //       if (!classExists) {
-  //         updatedClasses.push({
-  //           id: `Class${uuidv4()}`, // Generate a unique ID for the class
-  //           classname,
-  //           students: students.map((std) => std.regNo), // Map students to their regNo
-  //         });
-  //       } else {
-  //         console.error(`Class ${classname} already exists.`);
-  //       }
-
-  //       // Step 3: Update students
-  //       let updatedStudents = [...(prev.students || [])];
-
-  //       students.forEach((student) => {
-  //         const stdExist = updatedStudents.some(
-  //           (std) => std.regNo === student.regNo
-  //         );
-  //         if (!stdExist) {
-  //           updatedStudents.push({
-  //             ...student,
-  //             id: `Student${uuidv4()}`, // Generate a unique ID for the student
-  //           });
-  //         }
-  //       });
-
-  //       // Step 4: Return the updated dbData state
-  //       return {
-  //         ...prev,
-  //         classes: updatedClasses,
-  //         students: updatedStudents,
-  //       };
-  //     });
-  //   } catch (error) {
-  //     console.error("Manage Class Error", error);
-  //   }
-  // };
 
   const handleFileUpload = async (data) => {
     try {
       // Step 1: Parse the incoming data
-      const parsedData = JSON.parse(data);
-      const { classname, students } = parsedData;
+      const classname = classnameRef.current.value;
+      const students = await data.map((std) => std);
 
-      console.log(classname, students);
+      // Step 2: Update the state
+      setDbData((prev) => {
+        let updatedClasses = [...(prev.classes || [])];
+
+        const classExists = prev.classes.some((cls) =>
+          cls.name.toLowerCase().includes(classname.toLowerCase())
+        );
+
+        // If the class doesn't exist, add it
+        if (!classExists) {
+          updatedClasses.push({
+            id: `Class${uuidv4()}`, // Generate a unique ID for the class
+            name: classname,
+            students: students.map((std) => std.regNo), // Map students to their regNo
+          });
+        } else {
+          console.error(`Class ${classname} already exists.`);
+        }
+
+        // Step 3: Update students
+        let updatedStudents = [...(prev.students || [])];
+
+        students.forEach((student) => {
+          const stdExist = updatedStudents.some(
+            (std) => std.regNo === student.regNo
+          );
+          if (!stdExist) {
+            updatedStudents.push({
+              ...student,
+              id: `Student${uuidv4()}`, // Generate a unique ID for the student
+            });
+          }
+        });
+
+        // Step 4: Return the updated dbData state
+        return {
+          ...prev,
+          classes: updatedClasses,
+          students: updatedStudents,
+        };
+      });
     } catch (error) {
       console.error("Manage Class Error", error);
     }
   };
+
   const getAdvisorById = (advisorId) => {
     const advisor = dbData?.advisors?.find((adv) => adv.id === advisorId);
     return advisor ? advisor.name : null;
@@ -97,8 +100,8 @@ export const ManageClasses = () => {
             key={index}
             className={`p-6 rounded-md transition bg-blue-200 backdrop:blur-md`}
           >
-            <h3 className="text-xl font-bold text-gray-800 capitalize">
-              {curr?.classname}
+            <h3 className="text-xl font-bold text-gray-800 uppercase">
+              {curr?.name}
             </h3>
             <p className="text-sm text-gray-700 capitalize">
               Students: {curr?.students?.length}
@@ -117,7 +120,20 @@ export const ManageClasses = () => {
 
       {showPopup && (
         <>
-          <PopComponent handleFileUpload={handleFileUpload} />
+          <PopComponent
+            handleFileUpload={handleFileUpload}
+            inputField={
+              <InputField
+                id="className"
+                name="className"
+                title="Classname"
+                type="text"
+                placeholder="SP21-BSE"
+                ref={classnameRef}
+                className="uppercase"
+              />
+            }
+          />
           <Overlay />
         </>
       )}
@@ -125,22 +141,16 @@ export const ManageClasses = () => {
   );
 };
 
+// -----------------------------------------------------------
+//          Individual Class Code Starts Here
+// -----------------------------------------------------------
+
 export const ManageIndividualClass = ({ slug }) => {
   const { showPopup, togglePopup } = useAppContext();
   const { dbData, setDbData } = useDbContext();
 
   const [activeDropdown, setActiveDropdown] = useState(null); // "advisor" or "sos"
   const [uploaded, setUploaded] = useState(true);
-
-  // const [isFlagActive, setIsFlagActive] = useState(false);
-
-  // Check if the flag is stored in localStorage when the page loads
-  // useEffect(() => {
-  //   const storedFlag = localStorage.getItem("isResultUploaded");
-  //   if (storedFlag === "true") {
-  //     setUploaded(true);
-  //   }
-  // }, []);
 
   // Early returns for loading and no data scenarios
   if (!dbData) return <div>Loading Manage Individual Class...</div>;
@@ -204,7 +214,10 @@ export const ManageIndividualClass = ({ slug }) => {
     setActiveDropdown(null); // Close the dropdown after assignment
   };
 
-  // Handle file upload and update results
+  function toggleDropdown(name) {
+    return (prev) => (prev === name ? null : name);
+  }
+
   const handleFileUpload = (data) => {
     const parsedData = JSON.parse(data);
     setDbData((prev) => {
@@ -261,12 +274,13 @@ export const ManageIndividualClass = ({ slug }) => {
     });
 
     setUploaded(false);
-    // sessionStorage.setItem("isResultUploaded", newFlagState.toString());
   };
   return (
     <PreLayout>
       <div className="w-full flex justify-between items-center">
-        <h2 className="text-2xl font-semibold mb-4">{classData.classname}</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          {classData.name.toUpperCase()}
+        </h2>
         <div className="relative">
           {!classData?.advisorId && (
             <>
@@ -314,8 +328,8 @@ export const ManageIndividualClass = ({ slug }) => {
       {classData?.students?.length > 0 ? (
         <TableComponent
           data={studentsForTable}
-          title={`Students of ${classData.classname}`}
-          key={`students-${classData.classname}`}
+          title={`Student Details`}
+          key={`students-${classData.name}`}
           excludeColumns={["resultId"]}
         />
       ) : (
@@ -329,8 +343,4 @@ export const ManageIndividualClass = ({ slug }) => {
       )}
     </PreLayout>
   );
-
-  function toggleDropdown(name) {
-    return (prev) => (prev === name ? null : name);
-  }
 };

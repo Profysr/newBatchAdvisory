@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, forwardRef } from "react";
 
+// InputField component
 export const InputField = forwardRef(
   (
     {
@@ -19,9 +20,13 @@ export const InputField = forwardRef(
     ref
   ) => (
     <div className="flex flex-col gap-2" aria-label="Custom Input Component">
-      {title && <label htmlFor={id}>{title}</label>}
+      {title && (
+        <label className="text-sm" htmlFor={id}>
+          {title}
+        </label>
+      )}
       <input
-        className={`${className} w-full px-2 py-3 rounded-md border-2 border-black-100 placeholder:opacity-75 placeholder:text-xs text-sm focus:outline-none`}
+        className={`${className} w-full px-2 py-3 rounded-md border-2 border-gray-300 focus:border-gray-600 placeholder:opacity-75 placeholder:text-xs text-sm focus:outline-none`}
         required
         placeholder={placeholder}
         id={id}

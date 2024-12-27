@@ -1,7 +1,6 @@
 "use client";
 import PreLayout from "@/layout/Layout";
 import WelcomeComponent from "../Gen/Welcome";
-import { useAppContext } from "@/context/AppContext";
 import { useEffect, useState } from "react";
 import EmptyPage from "../Gen/EmptyPage";
 import Link from "next/link";

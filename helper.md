@@ -1,3 +1,5 @@
+responsive karna hai layout ko ak dafah dobara
+
 context add kar rhaa hun
 
 "{

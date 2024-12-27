@@ -1,7 +1,8 @@
 import { useAppContext } from "@/context/AppContext";
 import Loader from "./Loader";
+import * as XLSX from "xlsx";
 
-const PopComponent = ({ handleFileUpload }) => {
+const PopComponent = ({ handleFileUpload, inputField }) => {
   const {
     isLoading,
     setIsLoading,
@@ -29,24 +30,61 @@ const PopComponent = ({ handleFileUpload }) => {
     processFile(file);
   };
 
+  // const processFile = (file) => {
+  //   if (file && file.type === "application/json") {
+  //     const reader = new FileReader();
+  //     reader.onload = (e) => {
+  //       const data = e.target.result;
+
+  //       try {
+  //         setIsLoading(true);
+  //         setTimeout(() => {
+  //           handleFileUpload(data);
+  //           setIsLoading(false);
+  //           togglePopup();
+  //         }, 2000);
+  //       } catch (err) {
+  //         alert("Invalid JSON file!");
+  //       }
+  //     };
+  //     reader.readAsText(file);
+  //   } else {
+  //     alert("Please upload a valid JSON file!");
+  //   }
+  // };
+
   const processFile = (file) => {
-    if (file && file.type === "application/json") {
+    if (
+      file &&
+      (file.type ===
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ||
+        file.type === "application/vnd.ms-excel")
+    ) {
       const reader = new FileReader();
+
       reader.onload = (e) => {
+        const data = e.target.result;
+
         try {
           setIsLoading(true);
-          setTimeout(() => {
-            handleFileUpload(e.target.result);
-            setIsLoading(false);
-            togglePopup();
-          }, 2000);
+          // Read the Excel data using XLSX library
+          const workbook = XLSX.read(data, { type: "array" });
+          const sheetName = workbook.SheetNames[0]; // Get the first sheet
+          const sheet = workbook.Sheets[sheetName];
+          const jsonData = XLSX.utils.sheet_to_json(sheet); // Convert sheet to JSON
+
+          handleFileUpload(jsonData); // Pass the parsed JSON data to handleFileUpload
         } catch (err) {
-          alert("Invalid JSON file!");
+          console.log("Invalid Excel file!");
+        } finally {
+          setIsLoading(false); // Stop loading animation after 2 seconds
+          togglePopup(); // Toggle popup visibility after delay
         }
       };
-      reader.readAsText(file);
+
+      reader.readAsArrayBuffer(file); // Use readAsArrayBuffer for better Excel file handling
     } else {
-      alert("Please upload a valid JSON file!");
+      console.log("Please upload a valid Excel file!");
     }
   };
 
@@ -55,19 +93,20 @@ const PopComponent = ({ handleFileUpload }) => {
       {isLoading ? (
         <Loader />
       ) : (
-        <>
-          <h2 className="text-sm my-3">Upload JSON File for Students</h2>
+        <div className="flex flex-col gap-4">
+          <h2 className="text-lg font-medium">Add New Class</h2>
+          {inputField && <div className="w-full">{inputField}</div>}
           <div
             onDrop={handleFileDrop}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onClick={handleDivClick}
-            className={`p-4 text-sm text-center w-full h-24 border-2 border-dashed ${
-              isDragging ? "border-blue-400 bg-blue-100" : "border-gray-300"
+            className={`p-4 text-sm text-center w-full h-32 border-2 border-dashed ${
+              isDragging ? "border-blue-400 bg-blue-100" : "border-gray-400"
             } flex items-center justify-center rounded-md cursor-pointer`}
           >
-            <span className="text-gray-500">
-              Drag and drop a JSON file here or click to choose
+            <span className="text-gray-600">
+              Drag and drop a Excel file here or click to choose
             </span>
           </div>
 
@@ -75,11 +114,11 @@ const PopComponent = ({ handleFileUpload }) => {
           <input
             id="fileInput"
             type="file"
-            accept="application/json"
+            accept=".xlsx, .xls"
             onChange={handleFileInput}
             className="hidden"
           />
-        </>
+        </div>
       )}
     </div>
   );

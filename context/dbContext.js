@@ -5,15 +5,13 @@ import { createContext, useContext, useState, useEffect } from "react";
 const DbContext = createContext();
 
 export const DbProvider = ({ children }) => {
-  const [dbData, setDbData] = useState(null); // Initially set to null, will fetch or initialize later
+  const [dbData, setDbData] = useState(null);
   useEffect(() => {
     const storedData = sessionStorage.getItem("dbData");
 
     if (storedData) {
-      // If data is in sessionStorage, use it
       setDbData(JSON.parse(storedData));
     } else {
-      // Fetch from API if sessionStorage is empty
       getData();
     }
   }, []);

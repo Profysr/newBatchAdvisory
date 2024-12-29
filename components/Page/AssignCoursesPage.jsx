@@ -11,8 +11,6 @@ import { useDbContext } from "@/context/dbContext";
 import { useAppContext } from "@/context/AppContext";
 
 // libraries
-import { MdOutlineDownloadDone } from "react-icons/md";
-import { FaChevronDown } from "react-icons/fa";
 
 const AssignCoursesPage = ({ classId }) => {
   const { dbData, setDbData } = useDbContext();
@@ -21,7 +19,7 @@ const AssignCoursesPage = ({ classId }) => {
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [openDropDown, setOpenDropDown] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
+  let passingMarks = 50;
   const assignedClass = dbData?.classes?.find((cls) => cls.id === classId);
 
   const processCourseData = useCallback(
@@ -133,55 +131,54 @@ const AssignCoursesPage = ({ classId }) => {
 
   // Filter courses
   const filterCourses = (filter) => {
-    if (!data || !filteredCourses) return;
+    if (!data) return;
 
+    const allCourses = data?.schemeOfStudy?.courses?.filter((course) => {
+      const isNotAssigned = !course.isAssigned;
+      const failedCourses = data?.students?.flatMap(
+        (student) => student.failedCourses
+      );
+      const isFailedByAnyStudent = failedCourses.includes(course.id);
+      return isNotAssigned || isFailedByAnyStudent;
+    });
     let updatedCourses;
 
     switch (filter) {
       case "core":
-        updatedCourses = filteredCourses.filter((course) =>
+        updatedCourses = allCourses.filter((course) =>
           course?.courseType?.toLowerCase()?.includes("core")
         );
         break;
       case "elective":
-        updatedCourses = filteredCourses.filter((course) =>
+        updatedCourses = allCourses.filter((course) =>
           course?.courseType?.toLowerCase()?.includes("elective")
         );
         break;
       case "generalEducation":
-        updatedCourses = filteredCourses.filter((course) =>
+        updatedCourses = allCourses.filter((course) =>
           course?.courseType?.toLowerCase()?.includes("general education")
         );
         break;
       case "supporting":
-        updatedCourses = filteredCourses.filter((course) =>
+        updatedCourses = allCourses.filter((course) =>
           course?.courseType?.toLowerCase()?.includes("supporting")
         );
         break;
       case "notAssigned":
-        updatedCourses = filteredCourses.filter((course) => {
+        updatedCourses = allCourses.filter((course) => {
           const isNotAssigned = !course.isAssigned;
           return isNotAssigned;
         });
         break;
 
       case "preRequisite":
-        updatedCourses = filteredCourses.filter((course) => {
+        updatedCourses = allCourses.filter((course) => {
           const preReq = course.preRequisites;
           return preReq && preReq !== "-" && preReq.length > 0;
         });
         break;
-
-      case "failed":
-        const failedCourse = data.students.flatMap(
-          (student) => student.failedCourses
-        );
-        updatedCourses = filteredCourses.filter((course) =>
-          failedCourse.includes(course.id)
-        );
-        break;
       default:
-        updatedCourses = filteredCourses;
+        updatedCourses = allCourses;
     }
     setFilteredCourses(updatedCourses);
   };
@@ -190,13 +187,28 @@ const AssignCoursesPage = ({ classId }) => {
     fetchData();
   }, [fetchData]);
 
+  const isPrerequisitePassed = (prerequisiteId) => {
+    return data?.students?.some((student) => {
+      const resultCard = data?.results?.find(
+        (result) => result.regNo === student.regNo
+      )?.resultCard;
+
+      // Check if the prerequisite course has been passed in any of the previous semesters
+      return resultCard?.some((semesterResult) =>
+        semesterResult.courses.some(
+          (course) =>
+            course.courseCode === prerequisiteId && course.marks >= passingMarks
+        )
+      );
+    });
+  };
+
   const handleAssignCourses = () => {
     if (selectedRows?.length === 0) {
       console.log("No courses selected.");
       return;
     }
-
-    // Step 1: Check if all selected courses have their prerequisites met
+    // Step 1: Check if the student's current semester allows the selected courses with prerequisites
     const invalidCourses = selectedRows.filter((courseId) => {
       const course = data?.schemeOfStudy?.courses?.find(
         (course) => course.id === courseId
@@ -206,11 +218,33 @@ const AssignCoursesPage = ({ classId }) => {
         return false; // No prerequisites to check
       }
 
+      // If the student is in the first semester, they cannot take any course with prerequisites
+      if (
+        assignedClass.currentSemester === 1 &&
+        course?.preRequisites !== "-"
+      ) {
+        console.log(
+          `In the first semester, you cannot take courses with prerequisites: ${course?.id}`
+        );
+        return true;
+      }
+
+      // Handle cases for higher semesters, check if the prerequisites are met
       if (course?.preRequisites) {
         const prerequisites = course?.preRequisites.split(",");
-        const prerequisitesMet = prerequisites.every((prerequisiteId) =>
-          selectedRows.includes(prerequisiteId)
-        );
+
+        const prerequisitesMet = prerequisites.every((prerequisiteId) => {
+          // Check if the prerequisite course is in the assigned courses for the class
+          const prerequisiteAssigned = data?.classes
+            ?.find((classItem) => classItem.id === classId)
+            ?.assignedCourses?.includes(prerequisiteId);
+
+          // Check if the prerequisite was passed in any previous semester
+          const prerequisitePassed =
+            prerequisiteAssigned || isPrerequisitePassed(prerequisiteId);
+
+          return prerequisitePassed;
+        });
 
         if (!prerequisitesMet) {
           console.log(`Prerequisites not met for course: ${course?.id}`);
@@ -228,37 +262,47 @@ const AssignCoursesPage = ({ classId }) => {
       return;
     }
 
-    // Step 3: Calculate total credit hours for courses with valid prerequisites
-    const totalSelectedCreditHours = selectedRows.reduce((total, courseId) => {
-      const course = data?.schemeOfStudy?.courses?.find(
-        (course) => course.id === courseId
-      );
-
-      if (!course) return total; // If no course found, skip it
-
-      // Extract credit hours as a number from the string
-      const creditHours = course?.creditHours
-        ? parseInt(course.creditHours.split("(")[0])
-        : 0;
-
-      return total + creditHours; // Add credit hours to the total
-    }, 0);
-
-    const { minCreditHours, maxCreditHours } = data?.schemeOfStudy;
-
-    // Step 4: Check if total credit hours fall within the allowed range
-    if (
-      totalSelectedCreditHours < minCreditHours ||
-      totalSelectedCreditHours > maxCreditHours
-    ) {
-      console.log(
-        `Total credit hours exceed the allowed range: ${minCreditHours} - ${maxCreditHours}`
-      );
-      return;
-    }
-
     setShowModal(true);
   };
+  // const handleAssignCourses = () => {
+  //   if (selectedRows?.length === 0) {
+  //     console.log("No courses selected.");
+  //     return;
+  //   }
+
+  //   // Step 1: Check if all selected courses have their prerequisites met
+  //   const invalidCourses = selectedRows.filter((courseId) => {
+  //     const course = data?.schemeOfStudy?.courses?.find(
+  //       (course) => course.id === courseId
+  //     );
+
+  //     if (course?.preRequisites === "-") {
+  //       return false; // No prerequisites to check
+  //     }
+
+  //     if (course?.preRequisites) {
+  //       const prerequisites = course?.preRequisites.split(",");
+  //       const prerequisitesMet = prerequisites.every((prerequisiteId) =>
+  //         selectedRows.includes(prerequisiteId)
+  //       );
+
+  //       if (!prerequisitesMet) {
+  //         console.log(`Prerequisites not met for course: ${course?.id}`);
+  //         return true;
+  //       }
+  //     }
+
+  //     return false;
+  //   });
+
+  //   if (invalidCourses.length > 0) {
+  //     console.log(
+  //       "Some selected courses have unmet prerequisites. Aborting assignment."
+  //     );
+  //     return;
+  //   }
+  //   setShowModal(true);
+  // };
 
   const handleConfirmAssignment = () => {
     const updatedAssignedClass = {
@@ -267,6 +311,7 @@ const AssignCoursesPage = ({ classId }) => {
         ...(assignedClass.assignedCourses || []),
         ...selectedRows, // Add the selected courses
       ],
+      currAssignedCourses: [...selectedRows],
     };
 
     const updatedClasses = dbData?.classes?.map((cls) =>
@@ -290,8 +335,9 @@ const AssignCoursesPage = ({ classId }) => {
     { id: "generalEducation", name: "General Education Courses" },
     { id: "supporting", name: "Supporting Courses" },
     { id: "preRequisite", name: "pre-Requisite" },
-    { id: "failed", name: "Failed Courses" },
   ];
+
+  // console.log(assignedClass);
 
   return (
     <PreLayout>
@@ -306,7 +352,6 @@ const AssignCoursesPage = ({ classId }) => {
               <MagicButton
                 title="Filter Courses"
                 handleClick={() => setOpenDropDown(!openDropDown)}
-                icon={<FaChevronDown />}
               />
               {openDropDown && (
                 <>
@@ -334,9 +379,9 @@ const AssignCoursesPage = ({ classId }) => {
                 title="Assign Courses"
                 handleClick={handleAssignCourses}
                 disabledCondition={selectedRows.length === 0}
-                icon={<MdOutlineDownloadDone />}
               />
             }
+            rowCondition={(row) => row?.isFailedByAnyStudent}
           />
 
           {/* Modal for Course Assignment */}

@@ -230,7 +230,6 @@ export const ManageIndividualSos = ({ slug }) => {
         console.log("No courses selected for deletion.");
         return prev;
       }
-
       // Create a new array where selected courses are removed from the schemeOfStudy
       const updatedSchemeOfStudy = prev?.schemeOfStudy?.map((sosItem) => {
         if (sosItem?.id === sos?.id) {
@@ -244,9 +243,15 @@ export const ManageIndividualSos = ({ slug }) => {
         return sosItem; // Keep other SOS items unchanged
       });
 
+      // Remove selected courses from the courses array
+      const updatedCourses = prev?.courses?.filter(
+        (course) => !selectedRows.includes(course?.id) // Remove courses with ids in selectedRows
+      );
+
       return {
         ...prev,
         schemeOfStudy: updatedSchemeOfStudy, // Set the updated scheme of study
+        courses: updatedCourses, // Set the updated courses
       };
     });
     setSelectedRows([]); // Clear the selected rows
@@ -257,8 +262,7 @@ export const ManageIndividualSos = ({ slug }) => {
       <MagicButton
         title={"Delete Courses"}
         handleClick={handleConfirmCourses}
-        disabledCondition={selectedRows.length === 0} // Disable if no courses are selected
-        classname={"!bg-red-600 !hover:bg-red-700"}
+        disabledCondition={selectedRows.length === 0}
       />
     </div>
   );

@@ -13,7 +13,7 @@ const MagicButton = ({
 }) => {
   return (
     <button
-      className={`relative inline-flex h-12 overflow-hidden rounded-md p-[1px] focus:outline-none disabled:bg-slate-700 disabled:cursor-not-allowed bg-slate-950 md:w-48 ${classname}`}
+      className={`relative inline-flex h-12 overflow-hidden rounded-md p-[1px] focus:outline-none disabled:bg-slate-600 disabled:cursor-not-allowed bg-slate-950 focus:scale-95 transition-all duration-200 md:w-48 ${classname}`}
       onClick={handleClick}
       aria-label="Magic Button Component"
       disabled={disabledCondition}

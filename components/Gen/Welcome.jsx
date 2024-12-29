@@ -3,7 +3,7 @@ const WelcomeComponent = ({ username }) => {
     <div className="w-full flex justify-center items-center">
       <h1 className="text-2xl font-light text-center">
         Welcome <br />
-        <span className="text-3xl font-semibold">{username} 👋</span>
+        <span className="text-3xl font-semibold capitalize">{username} 👋</span>
       </h1>
     </div>
   );

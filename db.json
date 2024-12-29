@@ -1,6 +1,39 @@
 {
-  "advisors": [],
-  "students": [],
+  "advisors": [
+    {
+      "id": "Advisora0187f4f-008a-49c6-8208-e32c904fdd09",
+      "name": "Yawar Abbas",
+      "email": "adv1@gmail.com",
+      "password": "adv1",
+      "assignedClass": "Class3820eac4-959e-4f05-b56c-89789a91acda"
+    }
+  ],
+  "students": [
+    {
+      "regNo": "sp21-bse-001",
+      "name": "haseeb",
+      "email": "sp21-bse-001@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "classId": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "semester": 1
+    },
+    {
+      "regNo": "sp21-bse-002",
+      "name": "afifa",
+      "email": "sp21-bse-002@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "classId": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "semester": 1
+    },
+    {
+      "regNo": "sp21-bse-003",
+      "name": "anamta",
+      "email": "sp21-bse-003@students.cuisahiwal.edu.pk",
+      "password": "std123",
+      "classId": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "semester": 1
+    }
+  ],
   "admins": [
     {
       "id": "admin",
@@ -9,8 +42,985 @@
       "password": "admin"
     }
   ],
-  "courses": [],
-  "classes": [],
+  "courses": [
+    {
+      "id": "CSC101",
+      "courseCode": "CSC101",
+      "courseTitle": "Introduction to ICT",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC102",
+      "courseCode": "CSC102",
+      "courseTitle": "Discrete Structures",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC103",
+      "courseCode": "CSC103",
+      "courseTitle": "Programming Fundamentals",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC211",
+      "courseCode": "CSC211",
+      "courseTitle": "Data Structures and Algorithms",
+      "creditHours": "4(3,1)",
+      "preRequisites": "CSC103",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC241",
+      "courseCode": "CSC241",
+      "courseTitle": "Object Oriented Programming",
+      "creditHours": "4(3,1)",
+      "preRequisites": "CSC103",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC322",
+      "courseCode": "CSC322",
+      "courseTitle": "Operating Systems",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC211",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC339",
+      "courseCode": "CSC339",
+      "courseTitle": "Data Communications and Computer Networks",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC356",
+      "courseCode": "CSC356",
+      "courseTitle": "Human Computer Interaction",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC371",
+      "courseCode": "CSC371",
+      "courseTitle": "Database Systems I",
+      "creditHours": "4(3,1)",
+      "preRequisites": "CSC241",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC432",
+      "courseCode": "CSC432",
+      "courseTitle": "Information Security",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSE291",
+      "courseCode": "CSE291",
+      "courseTitle": "Introduction to Software Engineering",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSE498",
+      "courseCode": "CSE498",
+      "courseTitle": "Senior Design Project I",
+      "creditHours": "2(0,2)",
+      "preRequisites": "CSC241, CSC371, CSE291, HUM102",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSE499",
+      "courseCode": "CSE499",
+      "courseTitle": "Senior Design Project II",
+      "creditHours": "4(0,4)",
+      "preRequisites": "CSE498",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "EEE241",
+      "courseCode": "EEE241",
+      "courseTitle": "Digital Logic Design",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Core Courses"
+    },
+    {
+      "id": "CSC110",
+      "courseCode": "CSC110",
+      "courseTitle": "Professional Practices for IT",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "HUM100",
+      "courseCode": "HUM100",
+      "courseTitle": "English Comprehension and Composition",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "HUM102",
+      "courseCode": "HUM102",
+      "courseTitle": "Report Writing Skills",
+      "creditHours": "3(3,0)",
+      "preRequisites": "HUM100",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "HUM103",
+      "courseCode": "HUM103",
+      "courseTitle": "Communication Skills",
+      "creditHours": "3(3,0)",
+      "preRequisites": "HUM100",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "HUM110",
+      "courseCode": "HUM110",
+      "courseTitle": "Islamic Studies",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "HUM111",
+      "courseCode": "HUM111",
+      "courseTitle": "Pakistan Studies",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "HUM114",
+      "courseCode": "HUM114",
+      "courseTitle": "Ethics",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing General Education Courses"
+    },
+    {
+      "id": "EEE121",
+      "courseCode": "EEE121",
+      "courseTitle": "Electric Circuits Analysis I",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Computing Supporting Courses"
+    },
+    {
+      "id": "MTH104",
+      "courseCode": "MTH104",
+      "courseTitle": "Calculus and Analytic Geometry",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing Supporting Courses"
+    },
+    {
+      "id": "MTH231",
+      "courseCode": "MTH231",
+      "courseTitle": "Linear Algebra",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing Supporting Courses"
+    },
+    {
+      "id": "MTH262",
+      "courseCode": "MTH262",
+      "courseTitle": "Statistics and Probability Theory",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Computing Supporting Courses"
+    },
+    {
+      "id": "CSC321",
+      "courseCode": "CSC321",
+      "courseTitle": "Microprocessor and Assembly Language",
+      "creditHours": "3(2,1)",
+      "preRequisites": "EEE241",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC331",
+      "courseCode": "CSC331",
+      "courseTitle": "Digital Image Processing",
+      "creditHours": "3(3,0)",
+      "preRequisites": "MTH231",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC334",
+      "courseCode": "CSC334",
+      "courseTitle": "Parallel and Distributed Computing",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC103",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC347",
+      "courseCode": "CSC347",
+      "courseTitle": "Computational Intelligence",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSC241",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC402",
+      "courseCode": "CSC402",
+      "courseTitle": "Database Systems II",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSC371",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC412",
+      "courseCode": "CSC412",
+      "courseTitle": "Visual Programming",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC241",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC417",
+      "courseCode": "CSC417",
+      "courseTitle": "E-Commerce and Digital Marketing",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC418",
+      "courseCode": "CSC418",
+      "courseTitle": "DevOps for Cloud Computing",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC430",
+      "courseCode": "CSC430",
+      "courseTitle": "Wireless Networks",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC339",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC443",
+      "courseCode": "CSC443",
+      "courseTitle": "Scripting Languages",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC241",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC451",
+      "courseCode": "CSC451",
+      "courseTitle": "Introduction to Modeling and Simulation",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC211",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC454",
+      "courseCode": "CSC454",
+      "courseTitle": "Pattern Recognition",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSC354",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC455",
+      "courseCode": "CSC455",
+      "courseTitle": "Computer Vision",
+      "creditHours": "3(3,0)",
+      "preRequisites": "MTH231",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC461",
+      "courseCode": "CSC461",
+      "courseTitle": "Introduction to Data Science",
+      "creditHours": "3(3,0)",
+      "preRequisites": "MTH262",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC462",
+      "courseCode": "CSC462",
+      "courseTitle": "Artificial Intelligence",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC1",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC471",
+      "courseCode": "CSC471",
+      "courseTitle": "Distributed Database Systems",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSC371",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC482",
+      "courseCode": "CSC482",
+      "courseTitle": "Systems and Networks Administration",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC339",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSC495",
+      "courseCode": "CSC495",
+      "courseTitle": "Game Development",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC241",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE300",
+      "courseCode": "CSE300",
+      "courseTitle": "Software Metrics",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSE291",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE325",
+      "courseCode": "CSE325",
+      "courseTitle": "Software Construction and Development",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE327",
+      "courseCode": "CSE327",
+      "courseTitle": "Software Re-Engineering",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE330",
+      "courseCode": "CSE330",
+      "courseTitle": "E-Commerce",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE331",
+      "courseCode": "CSE331",
+      "courseTitle": "Software Engineering Economics",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE332",
+      "courseCode": "CSE332",
+      "courseTitle": "Information System Audit",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE333",
+      "courseCode": "CSE333",
+      "courseTitle": "Software Process Improvement",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE334",
+      "courseCode": "CSE334",
+      "courseTitle": "Reverse Engineering of Source Code",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE350",
+      "courseCode": "CSE350",
+      "courseTitle": "Topics in Software Engineering I",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE354",
+      "courseCode": "CSE354",
+      "courseTitle": "Design Patterns",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE356",
+      "courseCode": "CSE356",
+      "courseTitle": "Formal Methods",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSE291",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "CSE483",
+      "courseCode": "CSE483",
+      "courseTitle": "Topics in Software Engineering II",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "CS and SE Elective Courses"
+    },
+    {
+      "id": "MTH100",
+      "courseCode": "MTH100",
+      "courseTitle": "Mathematics I",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Elective Courses"
+    },
+    {
+      "id": "MTH101",
+      "courseCode": "MTH101",
+      "courseTitle": "Calculus I",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Elective Courses"
+    },
+    {
+      "id": "CSC433",
+      "courseCode": "CSC433",
+      "courseTitle": "Cryptography and Network Security",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSC339",
+      "courseType": "Enterprise Security Architecture"
+    },
+    {
+      "id": "CSC354",
+      "courseCode": "CSC354",
+      "courseTitle": "Machine Learning",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Information Systems and Data Processing"
+    },
+    {
+      "id": "CSC496",
+      "courseCode": "CSC496",
+      "courseTitle": "Data Warehousing and Data Mining",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC371",
+      "courseType": "Information Systems and Data Processing"
+    },
+    {
+      "id": "HUM220",
+      "courseCode": "HUM220",
+      "courseTitle": "Introduction to Psychology",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM221",
+      "courseCode": "HUM221",
+      "courseTitle": "International Relations",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM320",
+      "courseCode": "HUM320",
+      "courseTitle": "Introduction to Sociology",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM430",
+      "courseCode": "HUM430",
+      "courseTitle": "French",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM431",
+      "courseCode": "HUM431",
+      "courseTitle": "German",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM432",
+      "courseCode": "HUM432",
+      "courseTitle": "Arabic",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM433",
+      "courseCode": "HUM433",
+      "courseTitle": "Persian",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM434",
+      "courseCode": "HUM434",
+      "courseTitle": "Chinese",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "HUM435",
+      "courseCode": "HUM435",
+      "courseTitle": "Japanese",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT100",
+      "courseCode": "MGT100",
+      "courseTitle": "Introduction to Business",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT101",
+      "courseCode": "MGT101",
+      "courseTitle": "Introduction to Management",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT131",
+      "courseCode": "MGT131",
+      "courseTitle": "Financial Accounting",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT210",
+      "courseCode": "MGT210",
+      "courseTitle": "Fundamentals of Marketing",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT350",
+      "courseCode": "MGT350",
+      "courseTitle": "Human Resource Management",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT403",
+      "courseCode": "MGT403",
+      "courseTitle": "Entrepreneurship",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "MGT522",
+      "courseCode": "MGT522",
+      "courseTitle": "Marketing of IT and Telecom Products",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Institutional Elective Courses"
+    },
+    {
+      "id": "CSC360",
+      "courseCode": "CSC360",
+      "courseTitle": "Software Safety Critical Systems",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Safety Critical Systems"
+    },
+    {
+      "id": "CSC361",
+      "courseCode": "CSC361",
+      "courseTitle": "Software Fault Tolerance",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Safety Critical Systems"
+    },
+    {
+      "id": "CSC353",
+      "courseCode": "CSC353",
+      "courseTitle": "Computer Graphics",
+      "creditHours": "3(2,1)",
+      "preRequisites": "MTH231",
+      "courseType": "Scientific Systems"
+    },
+    {
+      "id": "CSC448",
+      "courseCode": "CSC448",
+      "courseTitle": "Data Visualization",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Scientific Systems"
+    },
+    {
+      "id": "CSE302",
+      "courseCode": "CSE302",
+      "courseTitle": "Software Quality Engineering",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSE291",
+      "courseType": "Software Engineering Core Courses"
+    },
+    {
+      "id": "CSE303",
+      "courseCode": "CSE303",
+      "courseTitle": "Software Design and Architecture",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSE291",
+      "courseType": "Software Engineering Core Courses"
+    },
+    {
+      "id": "CSE304",
+      "courseCode": "CSE304",
+      "courseTitle": "Object Oriented Software Engineering",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSE291",
+      "courseType": "Software Engineering Core Courses"
+    },
+    {
+      "id": "CSE305",
+      "courseCode": "CSE305",
+      "courseTitle": "Software Requirement Engineering",
+      "creditHours": "3(3,0)",
+      "preRequisites": "CSE291",
+      "courseType": "Software Engineering Core Courses"
+    },
+    {
+      "id": "CSE455",
+      "courseCode": "CSE455",
+      "courseTitle": "Software Testing",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSE302",
+      "courseType": "Software Engineering Core Courses"
+    },
+    {
+      "id": "CSE494",
+      "courseCode": "CSE494",
+      "courseTitle": "Software Project Management",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSE291",
+      "courseType": "Software Engineering Core Courses"
+    },
+    {
+      "id": "BIO100",
+      "courseCode": "BIO100",
+      "courseTitle": "Fundamentals of Biology",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BIO135",
+      "courseCode": "BIO135",
+      "courseTitle": "General Chemistry",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BIO231",
+      "courseCode": "BIO231",
+      "courseTitle": "Fundamentals of Genetics",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BIO233",
+      "courseCode": "BIO233",
+      "courseTitle": "Development Biology",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BIO310",
+      "courseCode": "BIO310",
+      "courseTitle": "Introduction to Bioinformatics",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BSC101",
+      "courseCode": "BSC101",
+      "courseTitle": "Zoology I",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BSC102",
+      "courseCode": "BSC102",
+      "courseTitle": "Plant Sciences I",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "BSC206",
+      "courseCode": "BSC206",
+      "courseTitle": "Introduction to Microbiology",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "ENV230",
+      "courseCode": "ENV230",
+      "courseTitle": "Environmental Monitoring",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "PHY100",
+      "courseCode": "PHY100",
+      "courseTitle": "Mechanics and Thermodynamics",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "PHY120",
+      "courseCode": "PHY120",
+      "courseTitle": "Electricity, Magnetism and Optics",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "PHY229",
+      "courseCode": "PHY229",
+      "courseTitle": "Modern Physics",
+      "creditHours": "4(3,1)",
+      "preRequisites": "PHY120",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "SLS130",
+      "courseCode": "SLS130",
+      "courseTitle": "Introductory Soil Science I",
+      "creditHours": "4(3,1)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "CSC475",
+      "courseCode": "CSC475",
+      "courseTitle": "Numerical Computing",
+      "creditHours": "3(3,0)",
+      "preRequisites": "MTH104",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "MTH105",
+      "courseCode": "MTH105",
+      "courseTitle": "Multivariable Calculus",
+      "creditHours": "3(3,0)",
+      "preRequisites": "MTH104",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "MTH112",
+      "courseCode": "MTH112",
+      "courseTitle": "Set Theory and Logic",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "MTH232",
+      "courseCode": "MTH232",
+      "courseTitle": "Abstract Algebra",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "MTH242",
+      "courseCode": "MTH242",
+      "courseTitle": "Differential Equations",
+      "creditHours": "3(3,0)",
+      "preRequisites": "MTH104",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
+      "id": "CSC303",
+      "courseCode": "CSC303",
+      "courseTitle": "Mobile Application Development",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC241",
+      "courseType": "Web Technologies"
+    },
+    {
+      "id": "CSC336",
+      "courseCode": "CSC336",
+      "courseTitle": "Web Technologies",
+      "creditHours": "3(2,1)",
+      "preRequisites": "CSC241",
+      "courseType": "Web Technologies"
+    }
+  ],
+  "classes": [
+    {
+      "id": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "name": "sp21-bse",
+      "students": ["sp21-bse-001", "sp21-bse-002", "sp21-bse-003"],
+      "currentSemester": 1,
+      "advisorId": "Advisora0187f4f-008a-49c6-8208-e32c904fdd09",
+      "sosId": "sos500f8cc6-951e-400d-990e-ced108cee662",
+      "assignedCourses": ["CSC101", "HUM100", "HUM110", "EEE121", "MTH104"],
+      "currAssignedCourses": ["CSC101", "HUM100", "HUM110", "EEE121", "MTH104"]
+    }
+  ],
   "results": [],
-  "schemeOfStudy": []
+  "schemeOfStudy": [
+    {
+      "id": "sos500f8cc6-951e-400d-990e-ced108cee662",
+      "name": "computer science",
+      "totalCreditHours": 133,
+      "minCreditHours": 12,
+      "maxCreditHours": 21,
+      "courses": [
+        "CSC101",
+        "CSC102",
+        "CSC103",
+        "CSC211",
+        "CSC241",
+        "CSC322",
+        "CSC339",
+        "CSC356",
+        "CSC371",
+        "CSC432",
+        "CSE291",
+        "CSE498",
+        "CSE499",
+        "EEE241",
+        "CSC110",
+        "HUM100",
+        "HUM102",
+        "HUM103",
+        "HUM110",
+        "HUM111",
+        "HUM114",
+        "EEE121",
+        "MTH104",
+        "MTH231",
+        "MTH262",
+        "CSC321",
+        "CSC331",
+        "CSC334",
+        "CSC347",
+        "CSC402",
+        "CSC412",
+        "CSC417",
+        "CSC418",
+        "CSC430",
+        "CSC432",
+        "CSC443",
+        "CSC451",
+        "CSC454",
+        "CSC455",
+        "CSC461",
+        "CSC462",
+        "CSC471",
+        "CSC482",
+        "CSC495",
+        "CSE300",
+        "CSE325",
+        "CSE327",
+        "CSE330",
+        "CSE331",
+        "CSE332",
+        "CSE333",
+        "CSE334",
+        "CSE350",
+        "CSE354",
+        "CSE356",
+        "CSE483",
+        "MTH100",
+        "MTH101",
+        "CSC433",
+        "CSC354",
+        "CSC496",
+        "HUM220",
+        "HUM221",
+        "HUM320",
+        "HUM430",
+        "HUM431",
+        "HUM432",
+        "HUM433",
+        "HUM434",
+        "HUM435",
+        "MGT100",
+        "MGT101",
+        "MGT131",
+        "MGT210",
+        "MGT350",
+        "MGT403",
+        "MGT522",
+        "CSC360",
+        "CSC361",
+        "CSC353",
+        "CSC448",
+        "CSE302",
+        "CSE303",
+        "CSE304",
+        "CSE305",
+        "CSE455",
+        "CSE494",
+        "BIO100",
+        "BIO135",
+        "BIO231",
+        "BIO233",
+        "BIO310",
+        "BSC101",
+        "BSC102",
+        "BSC206",
+        "ENV230",
+        "PHY100",
+        "PHY120",
+        "PHY229",
+        "SLS130",
+        "CSC475",
+        "MTH105",
+        "MTH112",
+        "MTH232",
+        "MTH242",
+        "CSC303",
+        "CSC336"
+      ]
+    }
+  ]
 }

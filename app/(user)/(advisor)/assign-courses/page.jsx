@@ -1,18 +1,12 @@
-import PreLayout from "@/layout/Layout";
+import AssignCoursesPage from "@/components/Page/AssignCoursesPage";
 
-const AssignCoursesPage = async ({ searchParams }) => {
-  const classId = await searchParams.classId; // Retrieve the classId from the query string
+const page = async ({ searchParams }) => {
+  const classId = (await searchParams).classId;
 
-  return (
-    <PreLayout>
-      <h1>Assign Courses</h1>
-      {classId ? (
-        <p>Class ID: {classId}</p>
-      ) : (
-        <p>No class selected. Please provide a valid class ID.</p>
-      )}
-    </PreLayout>
-  );
+  if (!classId) {
+    return <div>Loading Assign Courses Page ...!!</div>;
+  }
+  return <AssignCoursesPage classId={classId} />;
 };
 
-export default AssignCoursesPage;
+export default page;

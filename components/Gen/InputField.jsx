@@ -104,14 +104,14 @@ export const DynamicTextarea = ({
 
 export const Dropdown = ({ items, onSelect, noItemsText, manageLink }) => {
   return (
-    <div className="absolute mt-2 bg-white border border-gray-300 rounded-lg shadow-lg w-48 z-50">
+    <div className="absolute mt-1 max-h-40 overflow-y-auto bg-gray-900 text-white rounded-sm shadow-lg w-48 z-50">
       <ul className="py-1">
         {items?.length > 0 ? (
           items.map((item, idx) => (
             <li
               key={item?.id || idx} // Ensure a unique key for each item
               onClick={() => onSelect(item?.id)} // Trigger onSelect with item id
-              className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+              className="px-4 py-2 hover:bg-white/5 cursor-pointer text-sm"
             >
               {item?.name}
             </li>

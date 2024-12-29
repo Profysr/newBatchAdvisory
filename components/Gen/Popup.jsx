@@ -30,29 +30,6 @@ const PopComponent = ({ handleFileUpload, inputField }) => {
     processFile(file);
   };
 
-  // const processFile = (file) => {
-  //   if (file && file.type === "application/json") {
-  //     const reader = new FileReader();
-  //     reader.onload = (e) => {
-  //       const data = e.target.result;
-
-  //       try {
-  //         setIsLoading(true);
-  //         setTimeout(() => {
-  //           handleFileUpload(data);
-  //           setIsLoading(false);
-  //           togglePopup();
-  //         }, 2000);
-  //       } catch (err) {
-  //         alert("Invalid JSON file!");
-  //       }
-  //     };
-  //     reader.readAsText(file);
-  //   } else {
-  //     alert("Please upload a valid JSON file!");
-  //   }
-  // };
-
   const processFile = (file) => {
     if (
       file &&

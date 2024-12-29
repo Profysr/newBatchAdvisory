@@ -15,11 +15,11 @@ const AdminPage = ({ session }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!dbData) {
-      setError("Data is missing.");
-      setLoading(false);
-      return;
-    }
+    // if (!dbData) {
+    //   setError("Data is missing.");
+    //   setLoading(false);
+    //   return;
+    // }
 
     try {
       const calculateMetrics = () => {

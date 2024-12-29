@@ -30,6 +30,58 @@ export const ManageClasses = () => {
   const { showPopup, togglePopup } = useAppContext();
   const { dbData, setDbData } = useDbContext();
 
+  // const handleFileUpload = async (data) => {
+  //   try {
+  //     // Step 1: Parse the incoming data
+  //     const classname = classnameRef.current.value;
+  //     const students = await data.map((std) => std);
+
+  //     // Step 2: Update the state
+  //     setDbData((prev) => {
+  //       let updatedClasses = [...(prev.classes || [])];
+
+  //       const classExists = prev.classes.some((cls) =>
+  //         cls.name.toLowerCase().includes(classname.toLowerCase())
+  //       );
+
+  //       // If the class doesn't exist, add it
+  //       if (!classExists) {
+  //         updatedClasses.push({
+  //           id: `Class${uuidv4()}`, // Generate a unique ID for the class
+  //           name: classname,
+  //           students: students.map((std) => std.regNo), // Map students to their regNo
+  //         });
+  //       } else {
+  //         console.error(`Class ${classname} already exists.`);
+  //       }
+
+  //       // Step 3: Update students
+  //       let updatedStudents = [...(prev.students || [])];
+
+  //       students.forEach((student) => {
+  //         const stdExist = updatedStudents.some(
+  //           (std) => std.regNo === student.regNo
+  //         );
+  //         if (!stdExist) {
+  //           updatedStudents.push({
+  //             ...student,
+  //             id: `Student${uuidv4()}`, // Generate a unique ID for the student
+  //           });
+  //         }
+  //       });
+
+  //       // Step 4: Return the updated dbData state
+  //       return {
+  //         ...prev,
+  //         classes: updatedClasses,
+  //         students: updatedStudents,
+  //       };
+  //     });
+  //   } catch (error) {
+  //     console.error("Manage Class Error", error);
+  //   }
+  // };
+
   const handleFileUpload = async (data) => {
     try {
       // Step 1: Parse the incoming data
@@ -46,16 +98,24 @@ export const ManageClasses = () => {
 
         // If the class doesn't exist, add it
         if (!classExists) {
+          const classId = `Class${uuidv4()}`; // Generate a unique ID for the class
+
           updatedClasses.push({
-            id: `Class${uuidv4()}`, // Generate a unique ID for the class
+            id: classId, // Add classId to the class
             name: classname,
             students: students.map((std) => std.regNo), // Map students to their regNo
           });
+
+          // Step 3: Update students with classId
+          students = students.map((student) => ({
+            ...student,
+            classId, // Add classId property to each student
+          }));
         } else {
           console.error(`Class ${classname} already exists.`);
         }
 
-        // Step 3: Update students
+        // Step 4: Update students
         let updatedStudents = [...(prev.students || [])];
 
         students.forEach((student) => {
@@ -70,7 +130,7 @@ export const ManageClasses = () => {
           }
         });
 
-        // Step 4: Return the updated dbData state
+        // Step 5: Return the updated dbData state
         return {
           ...prev,
           classes: updatedClasses,
@@ -85,6 +145,26 @@ export const ManageClasses = () => {
   const getAdvisorById = (advisorId) => {
     const advisor = dbData?.advisors?.find((adv) => adv.id === advisorId);
     return advisor ? advisor.name : null;
+  };
+
+  const handleDeleteClass = (classId) => {
+    setDbData((prev) => {
+      const updatedClasses = prev.classes.filter((cls) => cls.id !== classId);
+
+      // Get the list of student IDs in the deleted class
+      const deletedClass = prev.classes.find((cls) => cls.id === classId);
+      const studentsToDelete = deletedClass?.students || [];
+
+      const updatedStudents = prev?.students?.filter(
+        (student) => !studentsToDelete.includes(student.regNo)
+      );
+
+      return {
+        ...prev,
+        classes: updatedClasses,
+        students: updatedStudents,
+      };
+    });
   };
 
   return (
@@ -114,6 +194,12 @@ export const ManageClasses = () => {
                 View Details
               </button>
             </Link>
+            <button
+              onClick={() => handleDeleteClass(curr?.id)}
+              className="mt-2 mx-2 px-4 py-2 bg-red-600 text-white text-sm rounded-md hover:bg-red-700 transition"
+            >
+              Delete Class
+            </button>
           </div>
         ))}
       </div>
@@ -150,9 +236,7 @@ export const ManageIndividualClass = ({ slug }) => {
   const { dbData, setDbData } = useDbContext();
 
   const [activeDropdown, setActiveDropdown] = useState(null); // "advisor" or "sos"
-  const [uploaded, setUploaded] = useState(true);
 
-  // Early returns for loading and no data scenarios
   if (!dbData) return <div>Loading Manage Individual Class...</div>;
 
   const classData = dbData.classes?.find((cls) =>
@@ -164,6 +248,7 @@ export const ManageIndividualClass = ({ slug }) => {
   const unassignedAdvisors = dbData?.advisors?.filter(
     (advisor) => !advisor.assignedClass
   );
+
   const studentsForTable = classData?.students?.map((studentId) =>
     dbData?.students?.find((student) => student?.regNo === studentId)
   );
@@ -219,62 +304,73 @@ export const ManageIndividualClass = ({ slug }) => {
   }
 
   const handleFileUpload = (data) => {
-    const parsedData = JSON.parse(data);
     setDbData((prev) => {
-      const updatedResults = [...prev.results];
-      const updatedStudents = [...prev.students]; // Make a copy of the students data
+      const prevResultObj = [...prev?.results]; // Copy existing results
+      const prevStudentObj = [...prev?.students]; // Copy existing students
 
-      parsedData.forEach((resultEntry) => {
-        const { regNo, resultCard } = resultEntry;
-        const resultId = uuidv4(); // Generate a unique result ID
+      // Step 1: Update results for students present in the new upload
+      data.forEach((row) => {
+        const { regNo, gpa, cgpa, ...courseGrades } = row; // Extract data
+        const coursesArray = Object.entries(courseGrades).map(
+          ([courseCode, marks]) => ({
+            courseCode,
+            marks: parseInt(marks, 10), // Convert marks to numbers
+          })
+        );
 
-        const studentResultIndex = updatedResults?.findIndex(
+        const resultCardIndex = prevResultObj.findIndex(
           (r) => r.regNo === regNo
         );
-        if (studentResultIndex === -1) {
-          updatedResults.push({ regNo, resultId, resultCard });
-        } else {
-          const existingResult = updatedResults[studentResultIndex];
-          const updatedResultCard = [...existingResult.resultCard];
 
-          resultCard.forEach((newSemesterResult) => {
-            const existingSemesterIndex = updatedResultCard.findIndex(
-              (sem) => sem.semester === newSemesterResult.semester
-            );
-            if (existingSemesterIndex === -1) {
-              updatedResultCard.push(newSemesterResult);
-            } else {
-              updatedResultCard[existingSemesterIndex] = {
-                ...updatedResultCard[existingSemesterIndex],
-                gpa: newSemesterResult.gpa,
-                cgpa: newSemesterResult.cgpa,
-              };
-            }
+        // updating result here. so yahan pr hi problem hu sakti hai
+        if (resultCardIndex === -1) {
+          const resultId = uuidv4();
+          prevResultObj.push({
+            regNo,
+            resultId,
+            resultCard: [
+              {
+                semester: 1,
+                gpa: parseFloat(gpa),
+                cgpa: parseFloat(cgpa),
+                courses: coursesArray,
+              },
+            ],
           });
 
-          updatedResults[studentResultIndex] = {
+          const studentCardIndex = prevStudentObj.findIndex(
+            (student) => student.regNo === regNo
+          );
+
+          if (studentCardIndex !== -1) {
+            prevStudentObj[studentCardIndex].resultId = resultId; // Mutating the existing student
+          }
+        } else {
+          const existingResult = prevResultObj[resultCardIndex];
+          const updatedResultCard = [
+            ...existingResult.resultCard,
+            {
+              semester: existingResult.resultCard.length + 1,
+              gpa: parseFloat(gpa),
+              cgpa: parseFloat(cgpa),
+              courses: coursesArray,
+            },
+          ];
+
+          const updatedResult = {
             ...existingResult,
             resultCard: updatedResultCard,
           };
-        }
 
-        // Add resultId to the respective student object in the students array
-        const studentIndex = updatedStudents.findIndex(
-          (student) => student.regNo === regNo
-        );
-        if (studentIndex !== -1) {
-          updatedStudents[studentIndex] = {
-            ...updatedStudents[studentIndex],
-            resultId,
-          };
+          prevResultObj[resultCardIndex] = updatedResult;
         }
       });
 
-      return { ...prev, results: updatedResults, students: updatedStudents };
+      // Return updated data
+      return { ...prev, results: prevResultObj, students: prevStudentObj };
     });
-
-    setUploaded(false);
   };
+
   return (
     <PreLayout>
       <div className="w-full flex justify-between items-center">
@@ -316,7 +412,7 @@ export const ManageIndividualClass = ({ slug }) => {
               )}
             </>
           )}
-          {classData?.advisorId && classData?.sosId && uploaded && (
+          {classData?.advisorId && classData?.sosId && (
             <MagicButton
               title="Upload Class Result"
               handleClick={togglePopup}

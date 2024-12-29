@@ -36,7 +36,7 @@ const LoginForm = () => {
               placeholder={"Enter Your Password"}
             />
           </div>
-          <MagicButton title="Sign In" type="submit" otherClasses="!w-full" />
+          <MagicButton title="Sign In" type="submit" classname="!w-full" />
         </form>
       </div>
     </div>

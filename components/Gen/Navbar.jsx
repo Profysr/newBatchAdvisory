@@ -72,7 +72,7 @@ const Navbar = () => {
           <MagicButton
             title="Logout"
             type="button"
-            otherClasses="!w-full"
+            classname="!w-full"
             handleClick={handleClick}
           />
         </ul>

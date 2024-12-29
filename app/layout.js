@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen min-h-screen box-border`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen box-border`}
       >
         <DbProvider>
           <AppProvider>{children}</AppProvider>

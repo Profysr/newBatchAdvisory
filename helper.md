@@ -1,16 +1,9 @@
 responsive karna hai layout ko ak dafah dobara
 
-context add kar rhaa hun
-
-"{
-"advisors":[],
-"students":[],
-"admins":[],
-"courses":[],
-"classes":[],
-"results":[],
-"schemeOfStudy":[]
-}"
+on the batch advisor page, display assigned class students on my table component with the button Assign courses that redirects user to the assign-courses page
+second, add filter options on the assign courses page using mhy dropdown component (options: core, elective, failed courses, all courses, further courses types mentioned in the sos)
+third add a action button on the table, that adds those checked courses to class object as assignedCourses.
+this is a rough idea of requirements, you can make further enhancements based on these but one important thing, i am just going to simplify the code
 
 https://chatgpt.com/c/67514230-d48c-8004-9ad4-ef208ffb2e90
 

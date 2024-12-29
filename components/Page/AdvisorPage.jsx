@@ -1,11 +1,19 @@
 "use client";
-import { useDbContext } from "@/context/dbContext";
+
+// Components
 import PreLayout from "@/layout/Layout";
-import { useCallback, useEffect, useState } from "react";
 import WelcomeComponent from "../Gen/Welcome";
 import TableComponent from "../Gen/Table";
 import MagicButton from "../Gen/Button";
+
+// States
+import { useDbContext } from "@/context/dbContext";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+
+// ----------------------------------------
+//          Code Starts Here
+// ----------------------------------------
 
 const AdvisorPage = ({ session }) => {
   const { dbData } = useDbContext();
@@ -13,13 +21,13 @@ const AdvisorPage = ({ session }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/assign-courses?classId=${data.id}`); // Navigate with query
+    router.push(`/assign-courses?classId=${session.assignedClass}`); // Navigate with query
   };
 
   const getData = useCallback(() => {
     if (!dbData) return;
 
-    const assignedClassId = session.assignedClass;
+    const assignedClassId = session?.assignedClass;
     if (!assignedClassId) {
       console.log("No class assigned to this advisor.");
       setData(null);
@@ -60,27 +68,26 @@ const AdvisorPage = ({ session }) => {
           let totalPassedCreditHours = 0;
           let enrolledCourses = [];
 
-          // Single loop to process resultCard
+          // Process resultCard
           result?.resultCard?.forEach((semester) => {
             semester?.courses?.forEach((course) => {
-              if (course.marks < 50) {
-                failedCourses.push(course.courseCode);
-              } else {
-                // Accumulate passed credit hours
-                const courseData = dbData?.courses?.find(
-                  (crc) => crc.id === course.courseCode
-                );
-                if (courseData) {
-                  const creditHours = parseInt(courseData.creditHours, 10); // Assuming creditHours is a number
-                  if (!isNaN(creditHours)) {
-                    totalPassedCreditHours += creditHours;
-                  }
-                }
-              }
+              const courseData = dbData?.courses?.find(
+                (crc) => crc.id === course.courseCode
+              );
 
-              // Add course to enrolledCourses if not already included
-              if (!enrolledCourses.includes(course.courseCode)) {
-                enrolledCourses.push(course.courseCode);
+              if (courseData) {
+                const creditHours = parseInt(courseData.creditHours, 10); // Assuming creditHours is a number
+
+                if (course.marks < 50) {
+                  failedCourses.push(course.courseCode); // Add to failed courses
+                } else if (!isNaN(creditHours)) {
+                  totalPassedCreditHours += creditHours; // Accumulate passed credit hours
+                }
+
+                // Add course to enrolledCourses if not already included
+                if (!enrolledCourses.includes(course.courseCode)) {
+                  enrolledCourses.push(course.courseCode);
+                }
               }
             });
           });
@@ -95,7 +102,6 @@ const AdvisorPage = ({ session }) => {
           };
         }
 
-        // If it's the first semester, return only basic student info
         return {
           id: student.id,
           regNo: student.regNo,
@@ -103,7 +109,7 @@ const AdvisorPage = ({ session }) => {
           failedCourses: [],
           enrolledCourses: [],
           totalPassedCreditHours: 0,
-        };
+        }; // If isFirstSemester, no calculations are performed
       });
 
       const schemeOfStudy = dbData.schemeOfStudy.find(
@@ -146,7 +152,6 @@ const AdvisorPage = ({ session }) => {
       };
 
       setData(finalData);
-      sessionStorage.setItem("advisorData", JSON.stringify(finalData));
       // console.log("Posted on Session");
     } catch (error) {
       console.log("Error fetching advisor data:", error);
@@ -155,18 +160,8 @@ const AdvisorPage = ({ session }) => {
   }, [dbData, session]);
 
   useEffect(() => {
-    const storedData = sessionStorage.getItem("advisorData");
-    if (storedData) {
-      setData(JSON.parse(storedData));
-      // console.log("Get from Session");
-    } else {
-      // console.log("Run get Function");
-
-      getData();
-    }
+    getData();
   }, [getData]);
-
-  console.log(data);
 
   return (
     <PreLayout>

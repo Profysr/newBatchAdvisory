@@ -140,7 +140,7 @@ const AdvisorPopUp = () => {
           </select>
         </div>
 
-        <MagicButton title="Add Advisor" type="submit" otherClasses="ml-auto" />
+        <MagicButton title="Add Advisor" type="submit" classname="ml-auto" />
       </form>
     </div>
   );

@@ -46,17 +46,85 @@ const StudentPage = ({ session }) => {
     }
   }, [memoizedData]);
 
+  // const handleEnrollment = () => {
+  //   if (selectedRows.length === 0) {
+  //     console.log("No courses selected for enrollment.");
+  //     return;
+  //   }
+
+  //   // Step 1: Calculate total credit hours for courses with valid prerequisites
+  //   const totalSelectedCreditHours = selectedRows.reduce((total, courseId) => {
+  //     const course = dbData?.courses?.find((course) => course.id === courseId);
+  //     if (course) {
+  //       // Extract credit hours as a number from the string (e.g., "3(2,1)" -> 3)
+  //       const creditHours = course?.creditHours
+  //         ? parseInt(course.creditHours.split("(")[0]) // Assuming format "3(2,1)"
+  //         : 0;
+  //       return total + creditHours; // Add credit hours to the total
+  //     }
+  //     return total; // If course is not found, return total as is
+  //   }, 0);
+
+  //   // Step 2: Validate credit hours
+  //   const { minCreditHours, maxCreditHours } = data?.schemeOfStudy;
+
+  //   if (minCreditHours === undefined || maxCreditHours === undefined) {
+  //     console.error("Min or Max Credit Hours are undefined in schemeOfStudy");
+  //     return;
+  //   }
+
+  //   if (
+  //     totalSelectedCreditHours < minCreditHours ||
+  //     totalSelectedCreditHours > maxCreditHours
+  //   ) {
+  //     console.log(
+  //       `Total credit hours exceed the allowed range: ${minCreditHours} - ${maxCreditHours}`
+  //     );
+  //     return;
+  //   }
+
+  //   // Step 3: Get the student ID from the session
+  //   const studentRegNo = session?.regNo;
+  //   const student = dbData?.students?.find(
+  //     (student) => student.regNo === studentRegNo
+  //   );
+
+  //   if (!student) {
+  //     console.error("Student not found.");
+  //     return;
+  //   }
+
+  //   // Step 4: Add selected courses to enrolledCourses
+  //   const updatedStudent = { ...student }; // Create a copy of the student
+  //   updatedStudent.enrolledCourses = updatedStudent.enrolledCourses || [];
+  //   updatedStudent.enrolledCourses.push(...selectedRows);
+
+  //   // Step 5: Update the student data in the dbData object
+  //   const updatedStudents = dbData?.students?.map((s) =>
+  //     s.regNo === studentRegNo ? updatedStudent : s
+  //   );
+
+  //   setDbData((prevData) => ({
+  //     ...prevData,
+  //     students: updatedStudents,
+  //   }));
+
+  //   console.log(
+  //     "Enrollment completed successfully. Selected courses added to student's enrolled courses."
+  //   );
+  //   setSelectedRows([]); // Clear selected courses
+  // };
+
   const handleEnrollment = () => {
     if (selectedRows.length === 0) {
       console.log("No courses selected for enrollment.");
       return;
     }
 
-    // Step 1: Calculate total credit hours for courses with valid prerequisites
+    // Step 1: Calculate total credit hours for selected courses
     const totalSelectedCreditHours = selectedRows.reduce((total, courseId) => {
       const course = dbData?.courses?.find((course) => course.id === courseId);
       if (course) {
-        // Extract credit hours as a number from the string (e.g., "3(2,1)" -> 3)
         const creditHours = course?.creditHours
           ? parseInt(course.creditHours.split("(")[0]) // Assuming format "3(2,1)"
           : 0;
@@ -77,7 +145,7 @@ const StudentPage = ({ session }) => {
       totalSelectedCreditHours < minCreditHours ||
       totalSelectedCreditHours > maxCreditHours
     ) {
-      console.log(
+      alert(
         `Total credit hours exceed the allowed range: ${minCreditHours} - ${maxCreditHours}`
       );
       return;
@@ -94,12 +162,40 @@ const StudentPage = ({ session }) => {
       return;
     }
 
-    // Step 4: Add selected courses to enrolledCourses
+    const failedCourses = student?.failedCourses || []; // Courses the student has failed
+
+    const coursesWithIssues = selectedRows.filter((courseId) => {
+      const course = dbData?.courses?.find((course) => course.id === courseId);
+      if (course) {
+        // Convert preRequisites string to an array
+        const preRequisitesArray =
+          course.preRequisites === "-" ? [] : course.preRequisites.split(",");
+
+        // Check if any prerequisite is in the failedCourses array
+        return preRequisitesArray.some((prereq) =>
+          failedCourses.includes(prereq)
+        );
+      }
+      return false; // No course found or prerequisites are met
+    });
+
+    if (coursesWithIssues.length > 0) {
+      console.log(
+        "The following courses cannot be enrolled because prerequisites are failed:",
+        coursesWithIssues
+      );
+      alert(
+        "You cannot enroll in the selected courses because some prerequisites are in your failed courses list."
+      );
+      return;
+    }
+
+    // Step 5: Add selected courses to enrolledCourses
     const updatedStudent = { ...student }; // Create a copy of the student
     updatedStudent.enrolledCourses = updatedStudent.enrolledCourses || [];
     updatedStudent.enrolledCourses.push(...selectedRows);
 
-    // Step 5: Update the student data in the dbData object
+    // Step 6: Update the student data in the dbData object
     const updatedStudents = dbData?.students?.map((s) =>
       s.regNo === studentRegNo ? updatedStudent : s
     );
@@ -124,7 +220,7 @@ const StudentPage = ({ session }) => {
       .filter(Boolean);
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <PreLayout>

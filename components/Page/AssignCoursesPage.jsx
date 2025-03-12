@@ -19,7 +19,6 @@ const AssignCoursesPage = ({ classId }) => {
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [openDropDown, setOpenDropDown] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  let passingMarks = 50;
   const assignedClass = dbData?.classes?.find((cls) => cls.id === classId);
 
   const processCourseData = useCallback(
@@ -187,122 +186,85 @@ const AssignCoursesPage = ({ classId }) => {
     fetchData();
   }, [fetchData]);
 
-  const isPrerequisitePassed = (prerequisiteId) => {
-    return data?.students?.some((student) => {
-      const resultCard = data?.results?.find(
-        (result) => result.regNo === student.regNo
-      )?.resultCard;
-
-      // Check if the prerequisite course has been passed in any of the previous semesters
-      return resultCard?.some((semesterResult) =>
-        semesterResult.courses.some(
-          (course) =>
-            course.courseCode === prerequisiteId && course.marks >= passingMarks
-        )
-      );
-    });
-  };
-
   const handleAssignCourses = () => {
     if (selectedRows?.length === 0) {
       console.log("No courses selected.");
       return;
     }
-    // Step 1: Check if the student's current semester allows the selected courses with prerequisites
+
     const invalidCourses = selectedRows.filter((courseId) => {
       const course = data?.schemeOfStudy?.courses?.find(
         (course) => course.id === courseId
       );
 
-      if (course?.preRequisites === "-") {
-        return false; // No prerequisites to check
-      }
-
-      // If the student is in the first semester, they cannot take any course with prerequisites
-      if (
-        assignedClass.currentSemester === 1 &&
-        course?.preRequisites !== "-"
-      ) {
-        console.log(
-          `In the first semester, you cannot take courses with prerequisites: ${course?.id}`
-        );
+      if (!course) {
+        console.log(`Course not found in scheme of study: ${courseId}`);
         return true;
       }
 
-      // Handle cases for higher semesters, check if the prerequisites are met
-      if (course?.preRequisites) {
-        const prerequisites = course?.preRequisites.split(",");
+      // Convert preRequisites string to array
+      const prerequisites =
+        course?.preRequisites === "-" ? [] : course?.preRequisites.split(",");
 
-        const prerequisitesMet = prerequisites.every((prerequisiteId) => {
-          // Check if the prerequisite course is in the assigned courses for the class
-          const prerequisiteAssigned = data?.classes
-            ?.find((classItem) => classItem.id === classId)
-            ?.assignedCourses?.includes(prerequisiteId);
+      // console.log(`\nChecking course: ${course.id}`);
+      // console.log("Course details:", course);
+      // console.log("Prerequisites:", prerequisites);
 
-          // Check if the prerequisite was passed in any previous semester
-          const prerequisitePassed =
-            prerequisiteAssigned || isPrerequisitePassed(prerequisiteId);
-
-          return prerequisitePassed;
-        });
-
-        if (!prerequisitesMet) {
-          console.log(`Prerequisites not met for course: ${course?.id}`);
-          return true;
-        }
+      // No prerequisites to check
+      if (prerequisites.length === 0) {
+        console.log(`No prerequisites for course: ${course.id}`);
+        return false;
       }
 
+      // Fetch assigned courses
+      const assignedCourses =
+        dbData?.classes?.find((classItem) => classItem.id === assignedClass.id)
+          ?.assignedCourses || []; // Default to an empty array if not available
+
+      // console.log("Classes Data:", data?.classes);
+      // console.log("Assigned Class ID:", assignedClass.id);
+      console.log("Assigned Courses for Current Class:", assignedCourses);
+
+      if (!assignedCourses) {
+        console.error(
+          `No assigned courses found for class ID: ${assignedClass.id}. Please ensure the data is populated correctly.`
+        );
+        return true; // Block assignment
+      }
+
+      // Check if all prerequisites are met
+      const prerequisitesMet = prerequisites.every((prerequisiteId) => {
+        const isMet = assignedCourses?.includes(prerequisiteId);
+        if (!isMet) {
+          console.log(`Prerequisite not met: ${prerequisiteId}`);
+        }
+        return isMet;
+      });
+
+      if (!prerequisitesMet) {
+        console.log(`Prerequisites not met for course: ${course.id}`);
+        return true;
+      }
+
+      console.log(`All prerequisites met for course: ${course.id}`);
       return false;
     });
 
     if (invalidCourses.length > 0) {
+      alert(
+        `The following courses have unmet prerequisites: ${invalidCourses.join(
+          ", "
+        )}.`
+      );
       console.log(
         "Some selected courses have unmet prerequisites. Aborting assignment."
       );
       return;
     }
 
+    console.log("All selected courses passed the prerequisite checks.");
     setShowModal(true);
   };
-  // const handleAssignCourses = () => {
-  //   if (selectedRows?.length === 0) {
-  //     console.log("No courses selected.");
-  //     return;
-  //   }
-
-  //   // Step 1: Check if all selected courses have their prerequisites met
-  //   const invalidCourses = selectedRows.filter((courseId) => {
-  //     const course = data?.schemeOfStudy?.courses?.find(
-  //       (course) => course.id === courseId
-  //     );
-
-  //     if (course?.preRequisites === "-") {
-  //       return false; // No prerequisites to check
-  //     }
-
-  //     if (course?.preRequisites) {
-  //       const prerequisites = course?.preRequisites.split(",");
-  //       const prerequisitesMet = prerequisites.every((prerequisiteId) =>
-  //         selectedRows.includes(prerequisiteId)
-  //       );
-
-  //       if (!prerequisitesMet) {
-  //         console.log(`Prerequisites not met for course: ${course?.id}`);
-  //         return true;
-  //       }
-  //     }
-
-  //     return false;
-  //   });
-
-  //   if (invalidCourses.length > 0) {
-  //     console.log(
-  //       "Some selected courses have unmet prerequisites. Aborting assignment."
-  //     );
-  //     return;
-  //   }
-  //   setShowModal(true);
-  // };
 
   const handleConfirmAssignment = () => {
     const updatedAssignedClass = {

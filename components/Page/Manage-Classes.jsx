@@ -30,89 +30,26 @@ export const ManageClasses = () => {
   const { showPopup, togglePopup } = useAppContext();
   const { dbData, setDbData } = useDbContext();
 
-  // const handleFileUpload = async (data) => {
-  //   try {
-  //     // Step 1: Parse the incoming data
-  //     const classname = classnameRef.current.value;
-  //     const students = await data.map((std) => std);
+  // const calculateClassCurrentSemester = (students, results) => {
+  //   let maxSemesters = 0;
 
-  //     // Step 2: Update the state
-  //     setDbData((prev) => {
-  //       let updatedClasses = [...(prev.classes || [])];
-  //       let updatedStudents = [...(prev.students || [])];
+  //   students.forEach((student) => {
+  //     // Find the student's result using the resultId
+  //     const studentResults = results.find(
+  //       (result) => result.resultId === student.resultId
+  //     );
 
-  //       const classExists = prev.classes.some((cls) =>
-  //         cls.name.toLowerCase().includes(classname.toLowerCase())
-  //       );
-
-  //       // If the class doesn't exist, add it
-  //       if (!classExists) {
-  //         const classId = `Class${uuidv4()}`; // Generate a unique ID for the class
-
-  //         updatedClasses.push({
-  //           id: classId, // Add classId to the class
-  //           name: classname,
-  //           students: students.map((std) => std.regNo), // Map students to their regNo
-  //         });
-
-  //         // Step 3: Update students with classId
-  //         updatedStudents = students.map((student) => ({
-  //           ...student,
-  //           classId, // Add classId property to each student
-  //         }));
-  //       } else {
-  //         console.error(`Class ${classname} already exists.`);
-  //       }
-
-  //       // Step 4: Update students
-  //       students.forEach((student) => {
-  //         const stdExist = updatedStudents.some(
-  //           (std) => std.regNo === student.regNo
-  //         );
-  //         if (!stdExist) {
-  //           updatedStudents.push({
-  //             ...student,
-  //             id: `Student${uuidv4()}`, // Generate a unique ID for the student
-  //           });
+  //     if (studentResults) {
+  //       studentResults.resultCard.forEach((result) => {
+  //         if (result.semester > maxSemesters) {
+  //           maxSemesters = result.semester;
   //         }
   //       });
+  //     }
+  //   });
 
-  //       // Step 5: Return the updated dbData state
-  //       return {
-  //         ...prev,
-  //         classes: updatedClasses,
-  //         students: updatedStudents,
-  //       };
-  //     });
-  //   } catch (error) {
-  //     console.error("Manage Class Error", error);
-  //   }
+  //   return maxSemesters + 1;
   // };
-
-  // Helper function to calculate the current semester of the class
-
-  // Helper function to calculate the current semester of the class
-
-  const calculateClassCurrentSemester = (students, results) => {
-    let maxSemesters = 0;
-
-    students.forEach((student) => {
-      // Find the student's result using the resultId
-      const studentResults = results.find(
-        (result) => result.resultId === student.resultId
-      );
-
-      if (studentResults) {
-        studentResults.resultCard.forEach((result) => {
-          if (result.semester > maxSemesters) {
-            maxSemesters = result.semester;
-          }
-        });
-      }
-    });
-
-    return maxSemesters + 1;
-  };
 
   const handleFileUpload = async (data) => {
     try {
@@ -121,10 +58,10 @@ export const ManageClasses = () => {
       const students = await data.map((std) => std);
 
       // Step 2: Calculate the current semester for the entire class
-      const currentSemester = calculateClassCurrentSemester(
-        students,
-        dbData?.results
-      );
+      // const currentSemester = calculateClassCurrentSemester(
+      //   students,
+      //   dbData?.results
+      // );
 
       // Step 3: Update the state
       setDbData((prev) => {
@@ -143,14 +80,14 @@ export const ManageClasses = () => {
             id: classId, // Add classId to the class
             name: classname,
             students: students.map((std) => std.regNo), // Map students to their regNo
-            currentSemester: currentSemester, // Add current semester to class
+            currentSemester: 1, // Add current semester to class
           });
 
           // Step 3: Update students with classId and semester
           updatedStudents = students.map((student) => ({
             ...student,
             classId, // Add classId property to each student
-            semester: currentSemester, // Add semester info to student
+            semester: 1, // Add semester info to student
           }));
         } else {
           console.error(`Class ${classname} already exists.`);
@@ -195,14 +132,20 @@ export const ManageClasses = () => {
       const deletedClass = prev.classes.find((cls) => cls.id === classId);
       const studentsToDelete = deletedClass?.students || [];
 
+      // Filter out students and their results
       const updatedStudents = prev?.students?.filter(
         (student) => !studentsToDelete.includes(student.regNo)
+      );
+
+      const updatedResults = prev?.results?.filter(
+        (result) => !studentsToDelete.includes(result.studentRegNo)
       );
 
       return {
         ...prev,
         classes: updatedClasses,
         students: updatedStudents,
+        results: updatedResults,
       };
     });
   };
@@ -417,6 +360,9 @@ export const ManageIndividualClass = ({ slug }) => {
       const prevClassObj = [...prev?.classes]; // Copy existing classes
       let invalidResultFound = false; // Flag to track if an invalid result is found
 
+      // Keep track of classes that had valid results uploaded
+      const updatedClasses = new Set();
+
       // Iterate over the data to process each student's result card
       data.forEach((row) => {
         const { regNo, gpa, cgpa, ...courseGrades } = row; // Extract data
@@ -431,10 +377,15 @@ export const ManageIndividualClass = ({ slug }) => {
           (r) => r.regNo === regNo
         );
 
-        // Check if the student has assigned courses for the semester
+        // Check if the student belongs to a class
         const classData = prevClassObj.find((cls) =>
           cls.students.includes(regNo)
         );
+        if (!classData) {
+          console.log(`Student ${regNo} is not assigned to any class.`);
+          return;
+        }
+
         const currAssignedCourses = classData?.currAssignedCourses || [];
 
         // Step 1: Verify if the result card contains the exact same courses as assigned
@@ -466,7 +417,7 @@ export const ManageIndividualClass = ({ slug }) => {
             resultId,
             resultCard: [
               {
-                semester: 1, // Hardcoded to 1st semester for now
+                semester: classData.currentSemester, // Use current semester from class data
                 gpa: parseFloat(gpa),
                 cgpa: parseFloat(cgpa),
                 courses: coursesArray,
@@ -474,14 +425,17 @@ export const ManageIndividualClass = ({ slug }) => {
             ],
           });
 
-          // Step 3: After successful upload, clear the assigned courses for this student
+          // Mark the class as updated
+          updatedClasses.add(classData.id);
+
+          // Clear assigned courses after upload
           classData.currAssignedCourses = [];
         } else {
           const existingResult = prevResultObj[resultCardIndex];
           const updatedResultCard = [
             ...existingResult.resultCard,
             {
-              semester: existingResult.resultCard.length + 1,
+              semester: classData.currentSemester, // Use current semester from class data
               gpa: parseFloat(gpa),
               cgpa: parseFloat(cgpa),
               courses: coursesArray,
@@ -495,15 +449,120 @@ export const ManageIndividualClass = ({ slug }) => {
 
           prevResultObj[resultCardIndex] = updatedResult;
 
-          // Clear the assigned courses after the result is uploaded successfully
-          classData.assignedCourses = []; // Clear assigned courses after upload
+          // Mark the class as updated
+          updatedClasses.add(classData.id);
+
+          // Clear assigned courses after upload
+          classData.currAssignedCourses = [];
         }
       });
 
+      // Step 4: Increment the current semester for all updated classes
+      prevClassObj.forEach((classData) => {
+        if (updatedClasses.has(classData.id)) {
+          classData.currentSemester += 1; // Increment the semester
+        }
+      });
+
+      alert("Result is uploaded");
       // Return updated data
       return { ...prev, results: prevResultObj, classes: prevClassObj };
     });
   };
+
+  // const handleFileUpload = (data) => {
+  //   setDbData((prev) => {
+  //     const prevResultObj = [...prev?.results]; // Copy existing results
+  //     const prevClassObj = [...prev?.classes]; // Copy existing classes
+  //     let invalidResultFound = false; // Flag to track if an invalid result is found
+
+  //     // Iterate over the data to process each student's result card
+  //     data.forEach((row) => {
+  //       const { regNo, gpa, cgpa, ...courseGrades } = row; // Extract data
+  //       const coursesArray = Object.entries(courseGrades).map(
+  //         ([courseCode, marks]) => ({
+  //           courseCode,
+  //           marks: parseInt(marks, 10), // Convert marks to numbers
+  //         })
+  //       );
+
+  //       const resultCardIndex = prevResultObj.findIndex(
+  //         (r) => r.regNo === regNo
+  //       );
+
+  //       // Check if the student has assigned courses for the semester
+  //       const classData = prevClassObj.find((cls) =>
+  //         cls.students.includes(regNo)
+  //       );
+  //       const currAssignedCourses = classData?.currAssignedCourses || [];
+
+  //       // Step 1: Verify if the result card contains the exact same courses as assigned
+  //       const resultCourseCodes = coursesArray.map(
+  //         (course) => course.courseCode
+  //       );
+
+  //       // Ensure every course in the assigned list is present in the result card
+  //       const isValidResultCard = currAssignedCourses.every((assignedCourse) =>
+  //         resultCourseCodes.includes(assignedCourse)
+  //       );
+
+  //       if (!isValidResultCard) {
+  //         // Log invalid result card only once
+  //         if (!invalidResultFound) {
+  //           console.log(
+  //             "Invalid result card(s). The result card does not match the assigned courses."
+  //           );
+  //           invalidResultFound = true;
+  //         }
+  //         return; // Skip uploading this result if validation fails
+  //       }
+
+  //       // Step 2: If the result card is valid, update the results
+  //       if (resultCardIndex === -1) {
+  //         const resultId = uuidv4();
+  //         prevResultObj.push({
+  //           regNo,
+  //           resultId,
+  //           resultCard: [
+  //             {
+  //               semester: 1, // Hardcoded to 1st semester for now
+  //               gpa: parseFloat(gpa),
+  //               cgpa: parseFloat(cgpa),
+  //               courses: coursesArray,
+  //             },
+  //           ],
+  //         });
+
+  //         // Step 3: After successful upload, clear the assigned courses for this student
+  //         classData.currAssignedCourses = [];
+  //       } else {
+  //         const existingResult = prevResultObj[resultCardIndex];
+  //         const updatedResultCard = [
+  //           ...existingResult.resultCard,
+  //           {
+  //             semester: existingResult.resultCard.length + 1,
+  //             gpa: parseFloat(gpa),
+  //             cgpa: parseFloat(cgpa),
+  //             courses: coursesArray,
+  //           },
+  //         ];
+
+  //         const updatedResult = {
+  //           ...existingResult,
+  //           resultCard: updatedResultCard,
+  //         };
+
+  //         prevResultObj[resultCardIndex] = updatedResult;
+
+  //         // Clear the assigned courses after the result is uploaded successfully
+  //         classData.assignedCourses = []; // Clear assigned courses after upload
+  //       }
+  //     });
+
+  //     // Return updated data
+  //     return { ...prev, results: prevResultObj, classes: prevClassObj };
+  //   });
+  // };
 
   return (
     <PreLayout>
@@ -560,7 +619,7 @@ export const ManageIndividualClass = ({ slug }) => {
           data={studentsForTable}
           title={`Student Details`}
           key={`students-${classData.name}`}
-          excludeColumns={["resultId", "classId"]}
+          excludeColumns={["resultId", "classId", "semester"]}
         />
       ) : (
         <p className="text-gray-500">No students found for this class.</p>

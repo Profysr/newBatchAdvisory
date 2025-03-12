@@ -1,36 +1,36 @@
 {
   "advisors": [
     {
-      "id": "Advisora0187f4f-008a-49c6-8208-e32c904fdd09",
+      "id": "Advisor05cbc414-54e8-4570-991f-80a1a6091eb9",
       "name": "Yawar Abbas",
       "email": "adv1@gmail.com",
       "password": "adv1",
-      "assignedClass": "Class3820eac4-959e-4f05-b56c-89789a91acda"
+      "assignedClass": "Class97f2a542-8863-4505-9309-7de923bb066f"
     }
   ],
   "students": [
     {
-      "regNo": "sp21-bse-001",
+      "regNo": "sp21-bcs-001",
       "name": "haseeb",
-      "email": "sp21-bse-001@students.cuisahiwal.edu.pk",
+      "email": "sp21-bcs-001@students.cuisahiwal.edu.pk",
       "password": "std123",
-      "classId": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "classId": "Class97f2a542-8863-4505-9309-7de923bb066f",
       "semester": 1
     },
     {
-      "regNo": "sp21-bse-002",
+      "regNo": "sp21-bcs-002",
       "name": "afifa",
-      "email": "sp21-bse-002@students.cuisahiwal.edu.pk",
+      "email": "sp21-bcs-002@students.cuisahiwal.edu.pk",
       "password": "std123",
-      "classId": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "classId": "Class97f2a542-8863-4505-9309-7de923bb066f",
       "semester": 1
     },
     {
-      "regNo": "sp21-bse-003",
+      "regNo": "sp21-bcs-003",
       "name": "anamta",
-      "email": "sp21-bse-003@students.cuisahiwal.edu.pk",
+      "email": "sp21-bcs-003@students.cuisahiwal.edu.pk",
       "password": "std123",
-      "classId": "Class3820eac4-959e-4f05-b56c-89789a91acda",
+      "classId": "Class97f2a542-8863-4505-9309-7de923bb066f",
       "semester": 1
     }
   ],
@@ -876,6 +876,14 @@
       "courseType": "Supporting Science Elective Courses"
     },
     {
+      "id": "MTH251",
+      "courseCode": "MTH251",
+      "courseTitle": "Set Topology",
+      "creditHours": "3(3,0)",
+      "preRequisites": "-",
+      "courseType": "Supporting Science Elective Courses"
+    },
+    {
       "id": "CSC303",
       "courseCode": "CSC303",
       "courseTitle": "Mobile Application Development",
@@ -890,24 +898,150 @@
       "creditHours": "3(2,1)",
       "preRequisites": "CSC241",
       "courseType": "Web Technologies"
+    },
+    {
+      "id": "CSC337",
+      "courseCode": "CSC337",
+      "courseTitle": "Advanced Web Technologies",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Web Technologies"
+    },
+    {
+      "id": "CSE344",
+      "courseCode": "CSE344",
+      "courseTitle": "Semantic Web",
+      "creditHours": "3(2,1)",
+      "preRequisites": "-",
+      "courseType": "Web Technologies"
     }
   ],
   "classes": [
     {
-      "id": "Class3820eac4-959e-4f05-b56c-89789a91acda",
-      "name": "sp21-bse",
-      "students": ["sp21-bse-001", "sp21-bse-002", "sp21-bse-003"],
-      "currentSemester": 1,
-      "advisorId": "Advisora0187f4f-008a-49c6-8208-e32c904fdd09",
-      "sosId": "sos500f8cc6-951e-400d-990e-ced108cee662",
-      "assignedCourses": ["CSC101", "HUM100", "HUM110", "EEE121", "MTH104"],
-      "currAssignedCourses": ["CSC101", "HUM100", "HUM110", "EEE121", "MTH104"]
+      "id": "Class97f2a542-8863-4505-9309-7de923bb066f",
+      "name": "SP21-BCS",
+      "students": [
+        "sp21-bcs-001",
+        "sp21-bcs-002",
+        "sp21-bcs-003"
+      ],
+      "currentSemester": 3,
+      "advisorId": "Advisor05cbc414-54e8-4570-991f-80a1a6091eb9",
+      "sosId": "sos1e91f050-5f23-403f-af7f-d691297c7000",
+      "assignedCourses": [
+        "CSC101",
+        "HUM110",
+        "MTH104",
+        "EEE121",
+        "HUM100"
+      ],
+      "currAssignedCourses": []
     }
   ],
-  "results": [],
+  "results": [
+    {
+      "regNo": "sp21-bcs-001",
+      "resultId": "710c4712-518b-46ab-8cca-0e51227b53bb",
+      "resultCard": [
+        {
+          "semester": 1,
+          "gpa": 2.94,
+          "cgpa": 2.94,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 89
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 60
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 67
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 78
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 88
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "regNo": "sp21-bcs-002",
+      "resultId": "a67935d5-b805-4080-a1b4-f6006835d3f1",
+      "resultCard": [
+        {
+          "semester": 1,
+          "gpa": 3,
+          "cgpa": 3,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 80
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 66
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 55
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 98
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 88
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "regNo": "sp21-bcs-003",
+      "resultId": "cf0106ca-bf35-47df-8156-983818bb5c97",
+      "resultCard": [
+        {
+          "semester": 1,
+          "gpa": 2.66,
+          "cgpa": 2.66,
+          "courses": [
+            {
+              "courseCode": "CSC101",
+              "marks": 48
+            },
+            {
+              "courseCode": "EEE121",
+              "marks": 57
+            },
+            {
+              "courseCode": "HUM100",
+              "marks": 83
+            },
+            {
+              "courseCode": "HUM110",
+              "marks": 77
+            },
+            {
+              "courseCode": "MTH104",
+              "marks": 77
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "schemeOfStudy": [
     {
-      "id": "sos500f8cc6-951e-400d-990e-ced108cee662",
+      "id": "sos1e91f050-5f23-403f-af7f-d691297c7000",
       "name": "computer science",
       "totalCreditHours": 133,
       "minCreditHours": 12,
@@ -1018,8 +1152,11 @@
         "MTH112",
         "MTH232",
         "MTH242",
+        "MTH251",
         "CSC303",
-        "CSC336"
+        "CSC336",
+        "CSC337",
+        "CSE344"
       ]
     }
   ]

@@ -15,7 +15,8 @@
       "email": "sp21-bcs-001@students.cuisahiwal.edu.pk",
       "password": "std123",
       "classId": "Class97f2a542-8863-4505-9309-7de923bb066f",
-      "semester": 1
+      "semester": 1,
+      "enrolledCourses": ["CSC101", "HUM110", "EEE121", "MTH104", "HUM100"]
     },
     {
       "regNo": "sp21-bcs-002",
@@ -920,21 +921,11 @@
     {
       "id": "Class97f2a542-8863-4505-9309-7de923bb066f",
       "name": "SP21-BCS",
-      "students": [
-        "sp21-bcs-001",
-        "sp21-bcs-002",
-        "sp21-bcs-003"
-      ],
+      "students": ["sp21-bcs-001", "sp21-bcs-002", "sp21-bcs-003"],
       "currentSemester": 3,
       "advisorId": "Advisor05cbc414-54e8-4570-991f-80a1a6091eb9",
       "sosId": "sos1e91f050-5f23-403f-af7f-d691297c7000",
-      "assignedCourses": [
-        "CSC101",
-        "HUM110",
-        "MTH104",
-        "EEE121",
-        "HUM100"
-      ],
+      "assignedCourses": ["CSC101", "HUM110", "MTH104", "EEE121", "HUM100"],
       "currAssignedCourses": []
     }
   ],

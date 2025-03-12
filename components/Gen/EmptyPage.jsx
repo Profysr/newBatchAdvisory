@@ -26,7 +26,7 @@ const EmptyPage = () => {
         </h1>
 
         <p className="mt-4 text-gray-500 dark:text-gray-400">
-          Currently, you haven't any data yet !!
+          Currently, you haven&apos;t any data yet !!
         </p>
       </div>
     </div>

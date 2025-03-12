@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useEffect, forwardRef } from "react";
 
-// InputField component
 export const InputField = forwardRef(
   (
     {
@@ -42,6 +41,8 @@ export const InputField = forwardRef(
     </div>
   )
 );
+
+InputField.displayName = "InputField";
 
 export const SearchInput = ({ placeholder }) => {
   return (
